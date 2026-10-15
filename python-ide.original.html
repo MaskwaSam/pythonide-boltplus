@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTS Python IDE</title>
+<!--
+  CTS Python IDE — single-file, browser-based Python (Pyodide / WebAssembly).
+  Upload to Moodle as a File resource (Appearance > Display: "Open" or "In pop-up").
+  Needs internet access to cdn.jsdelivr.net (Python runtime) and cdnjs.cloudflare.com (editor).
+  If the editor CDN is blocked it falls back to a plain text box; Python still runs.
+-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<style>
+  :root{
+    --bg:#f6f7f9; --panel:#ffffff; --text:#1d2330; --muted:#5d6675; --line:#d9dde4;
+    --accent:#2563eb; --accent-text:#ffffff; --console:#0f172a; --console-text:#e2e8f0;
+    --err:#f87171; --ok:#4ade80; --in:#fbbf24;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1115; --panel:#171a21; --text:#e6e9ef; --muted:#9aa3b2; --line:#2a2f3a;
+      --accent:#3b82f6; --console:#0a0c10;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{background:var(--bg);color:var(--text);font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;flex-direction:column}
+  header{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
+  header h1{font-size:16px;margin:0 12px 0 0}
+  #file{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--text);width:11em}
+  button{font:inherit;padding:6px 12px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--text);cursor:pointer}
+  button:hover{border-color:var(--accent)}
+  button.primary{background:var(--accent);color:var(--accent-text);border-color:var(--accent);font-weight:600}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  #status{margin-left:auto;color:var(--muted);font-size:13px}
+  main{flex:1;display:grid;grid-template-columns:1fr 1fr;min-height:0}
+  @media (max-width:800px){main{grid-template-columns:1fr;grid-template-rows:1fr 1fr}}
+  .pane{display:flex;flex-direction:column;min-height:0;border-right:1px solid var(--line)}
+  .label{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:6px 16px;border-bottom:1px solid var(--line);background:var(--panel);display:flex;justify-content:space-between}
+  #editorWrap{flex:1;min-height:0;position:relative}
+  #code{width:100%;height:100%;border:0;resize:none;padding:10px;font:14px/1.5 ui-monospace,Menlo,Consolas,monospace;background:var(--panel);color:var(--text)}
+  .CodeMirror{height:100%;font:14px/1.5 ui-monospace,Menlo,Consolas,monospace}
+  @media (prefers-color-scheme: dark){
+    .CodeMirror{background:var(--panel);color:var(--text)}
+    .CodeMirror-gutters{background:var(--panel);border-color:var(--line)}
+    .CodeMirror-cursor{border-color:var(--text)}
+    .cm-s-default .cm-keyword{color:#c792ea}.cm-s-default .cm-string{color:#c3e88d}
+    .cm-s-default .cm-number{color:#f78c6c}.cm-s-default .cm-comment{color:#6b7385}
+    .cm-s-default .cm-def,.cm-s-default .cm-variable-2{color:#82aaff}.cm-s-default .cm-builtin{color:#ffcb6b}
+    .CodeMirror-selected{background:#2d3548 !important}
+  }
+  .cm-error-line{background:rgba(248,113,113,.18)}
+  #out{flex:1;margin:0;overflow:auto;padding:10px 16px;background:var(--console);color:var(--console-text);font:14px/1.5 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word}
+  #out .err{color:var(--err)} #out .sys{color:#94a3b8;font-style:italic} #out .in{color:var(--in)}
+  #cursor{font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<header>
+  <h1>Python IDE</h1>
+  <input id="file" value="main.py" aria-label="File name">
+  <button id="run" class="primary" disabled title="Ctrl+Enter">▶ Run</button>
+  <button id="open">Open .py</button>
+  <button id="save">Save .py</button>
+  <button id="clear">Clear output</button>
+  <button id="reset">New</button>
+  <input id="picker" type="file" accept=".py,.txt" hidden>
+  <span id="status">Loading Python…</span>
+</header>
+<main>
+  <section class="pane">
+    <div class="label"><span>Editor (source code)</span><span id="cursor">Ln 1, Col 1</span></div>
+    <div id="editorWrap"><textarea id="code" spellcheck="false"></textarea></div>
+  </section>
+  <section class="pane">
+    <div class="label"><span>Console (output + errors)</span><span id="pyver"></span></div>
+    <pre id="out"></pre>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+<script>
+// Change this to self-host the runtime (e.g. a folder on your own server).
+const PYODIDE_URL = window.PYODIDE_URL || "https://cdn.jsdelivr.net/pyodide/v0.29.5/full/";
+const STORE_KEY = "cts-python-ide:" + location.pathname;
+
+const STARTER = `# main.py
+# Author: ________   Date: ________
+# Purpose: ________
+
+# ---------- CONSTANTS ----------
+
+# ---------- INPUT ----------
+name = input("What is your name? ")
+
+# ---------- PROCESS ----------
+greeting = "Hello, " + name
+
+# ---------- OUTPUT ----------
+print(greeting)
+print(f"Your name has {len(name)} letters.")
+`;
+
+const $ = id => document.getElementById(id);
+const out = $("out"), statusEl = $("status"), runBtn = $("run");
+
+// ---------- Editor (CodeMirror if available, else textarea) ----------
+let saved = null;
+try { saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null"); } catch (e) {}
+$("code").value = saved?.code ?? STARTER;
+if (saved?.file) $("file").value = saved.file;
+
+let cm = null;
+if (window.CodeMirror) {
+  cm = CodeMirror.fromTextArea($("code"), {
+    mode: "python", lineNumbers: true, indentUnit: 4, tabSize: 4, indentWithTabs: false,
+    matchBrackets: true, lineWrapping: false,
+    extraKeys: {
+      "Tab": c => c.somethingSelected() ? c.indentSelection("add") : c.replaceSelection("    "),
+      "Shift-Tab": c => c.indentSelection("subtract"),
+      "Ctrl-Enter": () => run(), "Cmd-Enter": () => run(),
+      "Ctrl-S": () => saveFile(), "Cmd-S": () => saveFile()
+    }
+  });
+  cm.on("cursorActivity", () => { const p = cm.getCursor(); $("cursor").textContent = `Ln ${p.line+1}, Col ${p.ch+1}`; });
+  cm.on("change", () => { clearErrorMark(); persist(); });
+} else {
+  const ta = $("code");
+  ta.addEventListener("keydown", e => {
+    if (e.key === "Tab") { e.preventDefault(); const s = ta.selectionStart; ta.setRangeText("    ", s, ta.selectionEnd, "end"); }
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") { e.preventDefault(); run(); }
+  });
+  ta.addEventListener("input", persist);
+}
+const getCode = () => cm ? cm.getValue() : $("code").value;
+const setCode = s => cm ? cm.setValue(s) : ($("code").value = s);
+
+function persist(){ try { localStorage.setItem(STORE_KEY, JSON.stringify({code:getCode(), file:$("file").value})); } catch (e) {} }
+$("file").addEventListener("input", persist);
+
+let errMark = null;
+function clearErrorMark(){ if (cm && errMark !== null) { cm.removeLineClass(errMark, "background", "cm-error-line"); errMark = null; } }
+function markErrorLine(n){ if (!cm || !n) return; clearErrorMark(); errMark = n-1; cm.addLineClass(errMark, "background", "cm-error-line"); cm.scrollIntoView({line:errMark, ch:0}, 80); }
+
+// ---------- Console ----------
+function write(text, cls){
+  const span = document.createElement("span");
+  if (cls) span.className = cls;
+  span.textContent = text;
+  out.appendChild(span);
+  out.scrollTop = out.scrollHeight;
+}
+
+// ---------- Python runtime ----------
+let py = null;
+const HELPER = `
+import sys, builtins, traceback, linecache, js
+
+def _ide_input(prompt=""):
+    prompt = str(prompt)
+    sys.stdout.write(prompt)
+    sys.stdout.flush()
+    reply = js.prompt(prompt if prompt else "Input:")
+    if reply is None:
+        raise KeyboardInterrupt("Input cancelled")
+    js.window.ideEcho(reply + "\\n")
+    return reply
+
+builtins.input = _ide_input
+
+def _ide_run(src, filename):
+    g = {"__name__": "__main__", "__builtins__": builtins}
+    import linecache
+    linecache.cache[filename] = (len(src), None, src.splitlines(True), filename)
+    try:
+        code = compile(src, filename, "exec")
+        exec(code, g)
+        return 0
+    except SystemExit:
+        return 0
+    except BaseException as e:
+        tb = e.__traceback__
+        # drop the IDE's own frame so students only see their file
+        while tb is not None and tb.tb_frame.f_code.co_filename != filename:
+            tb = tb.tb_next
+        traceback.print_exception(type(e), e, tb)
+        line = getattr(e, "lineno", None) if isinstance(e, SyntaxError) else None
+        if line is None:
+            t = e.__traceback__
+            while t is not None:
+                if t.tb_frame.f_code.co_filename == filename:
+                    line = t.tb_lineno
+                t = t.tb_next
+        return line or -1
+`;
+
+window.ideEcho = s => write(s, "in");
+
+async function boot(){
+  try {
+    const s = document.createElement("script");
+    s.src = PYODIDE_URL + "pyodide.js";
+    await new Promise((ok, bad) => { s.onload = ok; s.onerror = () => bad(new Error("Could not download the Python runtime. Check the internet connection or ask your teacher.")); document.head.appendChild(s); });
+    py = await loadPyodide({ indexURL: PYODIDE_URL });
+    py.setStdout({ write: buf => { write(new TextDecoder().decode(buf)); return buf.length; } });
+    py.setStderr({ write: buf => { write(new TextDecoder().decode(buf), "err"); return buf.length; } });
+    py.runPython(HELPER);
+    const ver = py.runPython("import sys; sys.version.split()[0]");
+    $("pyver").textContent = "Python " + ver;
+    statusEl.textContent = "Ready — Ctrl+Enter to run";
+    runBtn.disabled = false;
+  } catch (e) {
+    statusEl.textContent = "Python failed to load";
+    write(String(e.message || e) + "\n", "err");
+  }
+}
+
+async function run(){
+  if (!py || runBtn.disabled) return;
+  runBtn.disabled = true; clearErrorMark();
+  const fname = ($("file").value.trim() || "main.py");
+  write(`>>> Running ${fname}\n`, "sys");
+  statusEl.textContent = "Running…";
+  await new Promise(r => setTimeout(r, 20)); // let the UI repaint first
+  const t0 = performance.now();
+  try {
+    const fn = py.globals.get("_ide_run");
+    const result = fn(getCode(), fname);
+    fn.destroy();
+    const ms = Math.round(performance.now() - t0);
+    if (result === 0) write(`>>> Finished in ${ms} ms\n\n`, "sys");
+    else { write(`>>> Stopped with an error${result > 0 ? " on line " + result : ""}\n\n`, "sys"); markErrorLine(result > 0 ? result : 0); }
+  } catch (e) {
+    write(String(e.message || e) + "\n", "err");
+  }
+  statusEl.textContent = "Ready — Ctrl+Enter to run";
+  runBtn.disabled = false;
+}
+
+// ---------- File buttons ----------
+function saveFile(){
+  let name = $("file").value.trim() || "main.py";
+  if (!/\.py$/i.test(name)) name += ".py";
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([getCode()], {type:"text/x-python"}));
+  a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+runBtn.onclick = run;
+$("save").onclick = saveFile;
+$("clear").onclick = () => { out.textContent = ""; clearErrorMark(); };
+$("open").onclick = () => $("picker").click();
+$("picker").onchange = async e => {
+  const f = e.target.files[0]; if (!f) return;
+  setCode(await f.text()); $("file").value = f.name; persist(); e.target.value = "";
+};
+$("reset").onclick = () => { if (confirm("Start a new file? Unsaved work in the editor will be replaced.")) { setCode(STARTER); $("file").value = "main.py"; persist(); } };
+
+boot();
+</script>
+</body>
+</html>

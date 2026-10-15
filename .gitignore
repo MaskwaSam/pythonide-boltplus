@@ -1,0 +1,15 @@
+.DS_Store
+.env
+.env.*
+.aws/
+.codex/
+.agents/
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+/reference/
+/verification/
+/pythonide-boltplus/
+/sphero-boltplus-ev3-file-resource-20260927.zip
+/bolt_starter_before_fix.py

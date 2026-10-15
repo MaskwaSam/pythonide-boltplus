@@ -1,0 +1,17 @@
+{
+  "name": "pythonide-boltplus",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A browser Python IDE with Sphero BOLT+ aiming, connection recovery, and Moodle packaging.",
+  "scripts": {
+    "test": "node --test tests/python-worker.test.mjs tests/sdk-cleanup.test.mjs tests/bolt-session.test.mjs",
+    "test:neo": "node tests/neo-reconnect-regression.cjs vendor/sphero/sphero-sdk.js fixed",
+    "test:browser": "node tests/browser.test.mjs",
+    "package": "python3 scripts/package.py",
+    "package:moodle": "python3 scripts/package-moodle.py",
+    "check:moodle": "node scripts/check-moodle-package.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

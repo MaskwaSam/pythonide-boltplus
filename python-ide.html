@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTS Python IDE</title>
+<link rel="icon" href="data:,">
+<!--
+  CTS Python IDE — browser-based Python (Pyodide / WebAssembly) with BOLT+.
+  Keep this HTML, ide.js, python-worker.js and vendor/ together. See README.md.
+  Upload to Moodle as a File resource (Appearance > Display: "Open" or "In pop-up").
+  Needs internet access to cdn.jsdelivr.net (Python runtime) and cdnjs.cloudflare.com (editor).
+  If the editor CDN is blocked it falls back to a plain text box; Python still runs.
+-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<style>
+  :root{
+    --bg:#f6f7f9; --panel:#ffffff; --text:#1d2330; --muted:#5d6675; --line:#d9dde4;
+    --accent:#2563eb; --accent-text:#ffffff; --console:#0f172a; --console-text:#e2e8f0;
+    --err:#f87171; --ok:#4ade80; --in:#fbbf24;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1115; --panel:#171a21; --text:#e6e9ef; --muted:#9aa3b2; --line:#2a2f3a;
+      --accent:#3b82f6; --console:#0a0c10;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{background:var(--bg);color:var(--text);font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;flex-direction:column}
+  header{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
+  header h1{font-size:16px;margin:0 12px 0 0}
+  #file{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--text);width:11em}
+  button{font:inherit;padding:6px 12px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--text);cursor:pointer}
+  button:hover{border-color:var(--accent)}
+  button.primary{background:var(--accent);color:var(--accent-text);border-color:var(--accent);font-weight:600}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  #status{color:var(--muted);font-size:13px}
+  .connection{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:13px;white-space:nowrap}
+  #robotDot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#94a3b8;flex:none}
+  #robotDot.connected{background:#16a34a;box-shadow:0 0 0 3px #16a34a22}
+  #robotDot.connecting{background:#d97706}
+  #stop{color:#b91c1c}
+  #help{margin:0;padding:8px 16px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted);background:var(--panel)}
+  #inputForm{display:flex;align-items:center;gap:8px;padding:10px;background:var(--panel);border-top:1px solid var(--line)}
+  #inputForm[hidden]{display:none}
+  #inputPrompt{max-width:45%;overflow-wrap:anywhere}
+  #inputReply{min-width:0;flex:1;font:inherit;padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--text)}
+  button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  main{flex:1;display:grid;grid-template-columns:1fr 1fr;min-height:0}
+  @media (max-width:800px){main{grid-template-columns:1fr;grid-template-rows:1fr 1fr}}
+  .pane{display:flex;flex-direction:column;min-height:0;border-right:1px solid var(--line)}
+  .label{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:6px 16px;border-bottom:1px solid var(--line);background:var(--panel);display:flex;justify-content:space-between}
+  #editorWrap{flex:1;min-height:0;position:relative}
+  #code{width:100%;height:100%;border:0;resize:none;padding:10px;font:14px/1.5 ui-monospace,Menlo,Consolas,monospace;background:var(--panel);color:var(--text)}
+  .CodeMirror{height:100%;font:14px/1.5 ui-monospace,Menlo,Consolas,monospace}
+  @media (prefers-color-scheme: dark){
+    .CodeMirror{background:var(--panel);color:var(--text)}
+    .CodeMirror-gutters{background:var(--panel);border-color:var(--line)}
+    .CodeMirror-cursor{border-color:var(--text)}
+    .cm-s-default .cm-keyword{color:#c792ea}.cm-s-default .cm-string{color:#c3e88d}
+    .cm-s-default .cm-number{color:#f78c6c}.cm-s-default .cm-comment{color:#6b7385}
+    .cm-s-default .cm-def,.cm-s-default .cm-variable-2{color:#82aaff}.cm-s-default .cm-builtin{color:#ffcb6b}
+    .CodeMirror-selected{background:#2d3548 !important}
+  }
+  .cm-error-line{background:rgba(248,113,113,.18)}
+  #out{flex:1;margin:0;overflow:auto;padding:10px 16px;background:var(--console);color:var(--console-text);font:14px/1.5 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word}
+  #out .err{color:var(--err)} #out .sys{color:#94a3b8;font-style:italic} #out .in{color:var(--in)}
+  #cursor{font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<header>
+  <h1>Python IDE</h1>
+  <input id="file" value="main.py" aria-label="File name">
+  <button id="run" class="primary" disabled title="Ctrl+Enter">▶ Run</button>
+  <button id="stop" disabled title="Stop the program and robot">■ Stop</button>
+  <button id="bolt" disabled>Connect BOLT+</button>
+  <button id="starter">BOLT+ starter</button>
+  <button id="open">Open .py</button>
+  <button id="save">Save .py</button>
+  <button id="clear">Clear output</button>
+  <button id="reset">New</button>
+  <input id="picker" type="file" accept=".py,.txt" hidden>
+  <span id="status" role="status">Loading Python…</span>
+  <span class="connection" role="status" aria-live="polite"><span id="robotDot" aria-hidden="true"></span><span id="robotStatus">BOLT+ disconnected</span></span>
+</header>
+<p id="help">Shake BOLT+ awake, then select <strong>Connect BOLT+</strong>. Use Chrome or Edge on HTTPS or localhost. Close other Sphero tabs and apps first.</p>
+<main>
+  <section class="pane">
+    <div class="label"><span>Editor (source code)</span><span id="cursor">Ln 1, Col 1</span></div>
+    <div id="editorWrap"><textarea id="code" spellcheck="false"></textarea></div>
+  </section>
+  <section class="pane">
+    <div class="label"><span>Console (output + errors)</span><span id="pyver"></span></div>
+    <pre id="out" aria-label="Program output" tabindex="0"></pre>
+    <form id="inputForm" hidden><label id="inputPrompt" for="inputReply">Input:</label><input id="inputReply" autocomplete="off"><button type="submit">Enter</button></form>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+<script src="vendor/sphero/sphero-sdk.js"></script>
+<script src="bolt-connection.js"></script>
+<script src="aim-controller.js"></script>
+<script src="ide.js"></script>
+</body>
+</html>

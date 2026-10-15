@@ -1,0 +1,12 @@
+Source: user-supplied sphero-boltplus-ev3-file-resource-20260927.zip
+Sphero Edu SDK remains third-party Sphero code. No new license is granted here.
+The supplied archive did not contain the .LICENSE.txt files named in its bundle headers. Original toybox.js header is preserved.
+toybox.js and core-4.6.0.wasm are copied without modification.
+sphero-sdk.js contains the reachable SDK modules and webpack bootstrap; the Edu UI entry is excluded.
+Local SDK patch: WebBluetooth.destroy clears timers before state reset and disconnects tracked GATT devices before dropping handles; late chooser/connect results cannot reopen a disposed session.
+IDE session protection: monotonic scan epochs and module-shared device ownership preserve replacement connections when old native results arrive.
+Recovery patch: reviewed module-6490 transformations adapted to this archive before local teardown/scan epoch safeguards.
+Neo build-candidate.cjs SHA-256: 05d05e46aa0f7d4503014a7eb5f26cb3cf1a168c11003e4e9e8a9e18319cb743
+Rebuild: node scripts/extract-sphero-sdk.mjs (requires extracted reference/).
+Original main.55f08aa7.js SHA-256: c88d1773f043be4509c945c3a9b611eb3f8ea9f9e7cbb7d849b61f4b57bbf32d
+SDK modules: 6082, 6490, 8267, 13357, 25788, 39481, 47956, 53855, 61757, 76559, 77079, 77796, 84359, 99311
