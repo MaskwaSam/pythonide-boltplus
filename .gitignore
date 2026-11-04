@@ -11,5 +11,16 @@ __pycache__/
 /reference/
 /verification/
 /pythonide-boltplus/
-/sphero-boltplus-ev3-file-resource-20260927.zip
+/sphero-boltplus-ev3-file-resource-*.zip
+/sphero-original-resource-reconnect-patch-*.zip
 /bolt_starter_before_fix.py
+
+# Local course material, historical handoffs, intermediate builds and receipts.
+/HANDOFF.md
+/CSE1240_RELEASE.md
+/Cube_Building_4x4x4_All_In_One.xml
+/cse1240-python-student-*.zip
+/pythonide-boltplus-moodle-cse1240-*.zip
+/pythonide-boltplus-features-*.zip
+/.package-build-*/
+/tests/course-browser.test.mjs

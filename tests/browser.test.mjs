@@ -1,9 +1,12 @@
 // Run against the local project server; uses real Chrome + Pyodide and an explicit SDK mock.
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
+import { readFileSync } from 'node:fs';
+import { URL as NodeURL } from 'node:url';
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
 const URL = process.env.IDE_TEST_URL || 'http://127.0.0.1:8765/python-ide.html';
+const RUNTIME_URL = process.env.IDE_TEST_PYODIDE_URL;
 const results = [];
 let browser;
 async function check(name, fn) {
@@ -12,7 +15,12 @@ async function check(name, fn) {
   catch (error) { results.push({ name, passed: false, ms: Date.now() - start, error: error.message }); throw error; }
 }
 async function ready(page) {
-  await page.waitForFunction(() => !document.querySelector('#run').disabled && document.querySelector('#status').textContent.startsWith('Ready'), null, { timeout: 60000 });
+  try {
+    await page.waitForFunction(() => !document.querySelector('#run').disabled && document.querySelector('#status').textContent.startsWith('Ready'), null, { timeout: 60000 });
+  } catch (error) {
+    error.message += '\nRuntime state: ' + JSON.stringify(await page.evaluate(() => ({ status: document.querySelector('#status')?.textContent, output: document.querySelector('#out')?.textContent, runDisabled: document.querySelector('#run')?.disabled })));
+    throw error;
+  }
 }
 async function code(page, text) {
   await page.evaluate(text => {
@@ -53,7 +61,7 @@ const MOCK_SDK = String.raw`
     box.EVENT = { TOY_READY: 'toy ready', READY_TOY_FAILED: 'ready toy failed', TOY_PUT_AWAY: 'toy put away' };
     const toy = Object.assign(new Emitter(), {
       getName: () => 'Mock BOLT+',
-      hasCommand: method => ['getBatteryPercentage', 'ping'].includes(method),
+      hasCommand: method => ['getBatteryPercentage', 'ping', 'setDisplayColor', 'setDisplayText', 'clearDisplay', 'setDisplayRotation', 'setDisplayLiveSensorData', 'setAnimationIdAndLooping'].includes(method),
       EVENT: { WILL_SLEEP_NOTIFY: 'will sleep', RESPONSE: { GET_BATTERY_PERCENTAGE: 'battery percentage' } },
       getBatteryPercentage: async () => {
         record('getBatteryPercentage');
@@ -81,6 +89,23 @@ const MOCK_SDK = String.raw`
         }
       }
     });
+    for (const method of ['setDisplayColor', 'setDisplayText', 'clearDisplay', 'setDisplayRotation', 'setDisplayLiveSensorData', 'setAnimationIdAndLooping']) {
+      toy[method] = async (...args) => record(method, args);
+    }
+    const enabled = new Set();
+    let sensorTimer;
+    const sensor = new Emitter();
+    sensor.EVENT = { DATA_READY: 'sensor data' };
+    sensor.getEnabledSensors = async () => [...enabled];
+    sensor.enable = async names => {
+      for (const name of names) enabled.add(name);
+      clearInterval(sensorTimer);
+      sensorTimer = setInterval(() => sensor.emit('sensor data', Object.fromEntries([...enabled].map(name => [name,
+        name === 'AmbientLight' ? { ambientLight: 123.5 } : name === 'Attitude' ? { pitch: 1, roll: 2, yaw: 3 } : { x: 1, y: 2, z: 3 }
+      ]))), 50);
+    };
+    sensor.disable = async names => { for (const name of names) enabled.delete(name); if (!enabled.size) clearInterval(sensorTimer); };
+    toy.sensorControl = sensor;
     window.__mockSleepWarning = () => toy.emit(toy.EVENT.WILL_SLEEP_NOTIFY, {});
     sdk.toybox = box;
     sdk.init = async () => { record('init'); };
@@ -104,6 +129,7 @@ const MOCK_SDK = String.raw`
 try {
   browser = await chromium.launch({ channel: 'chrome', headless: true });
   const context = await browser.newContext({ viewport: { width: 1200, height: 800 } });
+  if (RUNTIME_URL) await context.addInitScript(url => { window.PYODIDE_URL = url; }, RUNTIME_URL);
   const page = await context.newPage();
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
@@ -175,6 +201,7 @@ try {
   await context.close();
 
   const mockContext = await browser.newContext({ viewport: { width: 1200, height: 800 } });
+  if (RUNTIME_URL) await mockContext.addInitScript(url => { window.PYODIDE_URL = url; }, RUNTIME_URL);
   await mockContext.addInitScript(() => { Object.defineProperty(navigator, 'bluetooth', { configurable: true, value: {} }); });
   await mockContext.route('**/vendor/sphero/sphero-sdk.js', route => route.fulfill({ contentType: 'application/javascript', body: MOCK_SDK }));
   const robotPage = await mockContext.newPage();
@@ -219,6 +246,75 @@ try {
     assert.doesNotMatch(await robotPage.locator('#out').innerText(), />>> Running/);
     await robotPage.locator('#boltAimDone').click();
     await robotPage.locator('#boltAimDialog').waitFor({ state: 'hidden' });
+  });
+  await check('Python light and display bridge uses real worker and BOLT+ packet shape', async () => {
+    await robotPage.evaluate(() => { window.__mockCommands.length = 0; });
+    const output = await run(robotPage, `from sphero import *
+async def start_program():
+    await set_display_color({'r': 0, 'g': 255, 'b': 0})
+    await set_display_text('Hello\\nBOLT+', font=1)
+    light = await get_ambient_light()
+    print(f'LIGHT={light}')
+    print('GYRO=', await get_gyroscope())
+    print('BATTERY=', await get_battery_percentage())
+    await set_live_sensor_data(128)
+    await set_display_rotation(90)
+    await set_display_image(DisplayImage.CAT)
+    await set_display_animation(DisplayAnimation.FIREWORKS)
+    await clear_display()
+`);
+    assert.match(output, /LIGHT=123\.5/);
+    assert.match(output, /GYRO=.*'x': 1.*'y': 2.*'z': 3/);
+    assert.match(output, /BATTERY= 80/);
+    assert.doesNotMatch(output, /Stopped with an error/);
+    const commands = await robotPage.evaluate(() => window.__mockCommands);
+    assert.deepEqual(commands.find(c => c.method === 'setDisplayColor').args, [0, 255, 0]);
+    assert.deepEqual(commands.find(c => c.method === 'setDisplayText').args, ['Hello\nBOLT+', 255, 255, 255, 0, 0, 0, 'font_2']);
+    assert.deepEqual(commands.find(c => c.method === 'setDisplayLiveSensorData').args, [128]);
+    assert.deepEqual(commands.find(c => c.method === 'setDisplayRotation').args, ['rotated_90']);
+    assert.deepEqual(commands.filter(c => c.method === 'setAnimationIdAndLooping').map(c => c.args), [[642, false], [1029, true]]);
+    assert.equal(commands.filter(c => c.method === 'rollStart').length, 0);
+    await dot(robotPage, 'connected');
+  });
+  await check('complete emoji and animation library searches, loads previews and runs generated Python', async () => {
+    await robotPage.locator('#displayLibraryButton').click();
+    await robotPage.locator('#displayLibraryDialog').waitFor({ state: 'visible' });
+    await robotPage.locator('#displayAssetCategory').selectOption('emoji');
+    await robotPage.locator('#displayAssetSearch').fill('angry');
+    const tiles = robotPage.locator('.bolt-display-tile');
+    assert.equal(await tiles.count(), 2); // angry and sphero-angry
+    await tiles.filter({ has: robotPage.locator('.bolt-display-id', { hasText: /^angry$/ }) }).click();
+    const preview = robotPage.locator('.bolt-display-detail img');
+    await preview.evaluate(image => image.decode());
+    assert.ok(await preview.evaluate(image => image.naturalWidth > 0));
+    assert.match(await robotPage.locator('#displayAssetCode').inputValue(), /DisplayImage\.ANGRY/);
+    await robotPage.setViewportSize({ width: 375, height: 760 });
+    const bounds = await robotPage.locator('#displayLibraryDialog').boundingBox();
+    assert.ok(bounds.x >= 0 && bounds.width <= 375);
+    await robotPage.locator('#displayAssetType').selectOption('animations');
+    await robotPage.locator('#displayAssetSearch').fill('fireworks');
+    await tiles.filter({ has: robotPage.locator('.bolt-display-id', { hasText: /^fireworks$/ }) }).click();
+    assert.match(await robotPage.locator('#displayAssetCode').inputValue(), /DisplayAnimation\.FIREWORKS/);
+    await preview.evaluate(image => image.decode());
+    robotPage.once('dialog', dialog => dialog.accept());
+    await robotPage.locator('#useDisplayAsset').click();
+    await robotPage.locator('#displayLibraryDialog').waitFor({ state: 'hidden' });
+    await robotPage.setViewportSize({ width: 1200, height: 800 });
+    const output = await run(robotPage);
+    assert.match(output, />>> Finished/);
+    assert.doesNotMatch(output, /Stopped with an error/);
+    assert.match(await readCode(robotPage), /DisplayAnimation\.FIREWORKS/);
+  });
+  await check('Light + display button loads and runs the saved stationary example', async () => {
+    robotPage.once('dialog', dialog => dialog.accept());
+    await robotPage.locator('#lightDisplay').click();
+    assert.equal(await readCode(robotPage), readFileSync(new NodeURL('../examples/bolt_light_display.py', import.meta.url), 'utf8'));
+    assert.equal(await robotPage.locator('#file').inputValue(), 'bolt_light_display.py');
+    await robotPage.evaluate(() => { window.__mockCommands.length = 0; });
+    const output = await run(robotPage);
+    assert.equal((output.match(/Light: 123\.5 lux/g) || []).length, 10);
+    assert.doesNotMatch(output, /Stopped with an error/);
+    assert.equal(await robotPage.evaluate(() => window.__mockCommands.filter(c => c.method === 'rollStart').length), 0);
   });
   await check('mock bridge maps percent speed and stops after roll duration', async () => {
     await robotPage.evaluate(() => { window.__mockCommands.length = 0; });
@@ -321,5 +417,5 @@ try {
   process.exitCode = 1;
 } finally {
   if (browser) await browser.close();
-  console.log(JSON.stringify({ physicalRobotTested: false, results }, null, 2));
+  console.log(JSON.stringify({ physicalRobotTested: false, runtimeUrl: RUNTIME_URL || 'https://cdn.jsdelivr.net/pyodide/v0.29.5/full/', results }, null, 2));
 }

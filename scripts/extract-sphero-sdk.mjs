@@ -9,6 +9,7 @@ import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
 const patchNeoReconnect = require('./neo-reconnect-patch.cjs');
+const patchBleLifecycle = require('./patch-ble-lifecycle.cjs');
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const sourceDir = path.join(root, 'reference');
@@ -36,25 +37,7 @@ const tail = original.slice(original.indexOf('__webpack_module_cache__={}'))
   .replace(entry, 'window.SpheroSDK = __webpack_require__(13357)')
   .replace('//# sourceMappingURL=main.55f08aa7.js.map', '');
 let output = '/*! SDK modules extracted from the user-supplied Sphero Edu archive. See PROVENANCE.txt. */\n' +
-  '(()=>{var __webpack_modules__={' + [...selected].sort((a, b) => a - b).map(id => id + ':' + (id === 6490 ? patchNeoReconnect(modules[id].toString()) : modules[id].toString())).join(',') + '},' + tail;
-// Upstream destroy clears its device list before disconnecting GATT or timers.
-// Releasing those handles is needed after cancellation, timeouts, and retry.
-const oldDestroy = 'destroy:function(){C(),M(),x.removeEventListener("availabilitychanged",X)}';
-const newDestroy = 'destroy:function(){++_ideEpoch;M();for(var e of s.slice())if(e){e.removeEventListener("gattserverdisconnected",I);var t=_ideDeviceOwners.get(e);if(!t||t.adapter===_ideAdapterOwner)try{e.gatt.disconnect()}catch(t){}}C();x.removeEventListener("availabilitychanged",X)}';
-if (output.split(oldDestroy).length !== 2) throw new Error('Unexpected Web Bluetooth teardown. Recheck patch.');
-output = output.replace(oldDestroy, newDestroy);
-const lifecyclePatches = [
-  ['o=n(6082);e.exports=function(e){const t=new i,n=new o({"Class Name":"WebBluetooth"});', 'o=n(6082);const _ideDeviceOwners=new WeakMap;e.exports=function(e){const t=new i,n=new o({"Class Name":"WebBluetooth"});'],
-  ['var s,l,u,c,p,d,h,m,f,g,b,y,v,x=navigator.bluetooth', 'var s,l,u,c,p,d,h,m,f,g,b,y,v,_ideEpoch=0,_ideAdapterOwner={},x=navigator.bluetooth'],
-  ['N=function(e){return n.log("Looking for devices.")', 'N=function(e){const _ideScanEpoch=_ideEpoch,_ideScanOwner={adapter:_ideAdapterOwner};return n.log("Looking for devices.")'],
-  ['init:function(){return C(),x.addEventListener("availabilitychanged",X)', 'init:function(){return ++_ideEpoch,C(),x.addEventListener("availabilitychanged",X)'],
-  ['x.requestDevice(r).then((e=>(z(e),n.log("Selected device:",e),e.gatt.connect())))',
-   'x.requestDevice(r).then((e=>{if(_ideScanEpoch!==_ideEpoch)throw new Error("Connection cancelled");_ideDeviceOwners.set(e,_ideScanOwner);z(e);n.log("Selected device:",e);return e.gatt.connect().then(t=>{if(_ideScanEpoch!==_ideEpoch){_ideDeviceOwners.get(e)===_ideScanOwner&&e.gatt.disconnect();throw new Error("Connection cancelled")}return t})}))']
-];
-for (const [before, after] of lifecyclePatches) {
-  if (output.split(before).length !== 2) throw new Error('Unexpected Bluetooth scan lifecycle. Recheck patch.');
-  output = output.replace(before, after);
-}
+  '(()=>{var __webpack_modules__={' + [...selected].sort((a, b) => a - b).map(id => id + ':' + (id === 6490 ? patchBleLifecycle(patchNeoReconnect(modules[id].toString())) : modules[id].toString())).join(',') + '},' + tail;
 fs.mkdirSync(outputDir, { recursive: true });
 fs.writeFileSync(path.join(outputDir, 'sphero-sdk.js'), output);
 for (const name of ['toybox.js', 'core-4.6.0.wasm']) fs.copyFileSync(path.join(sourceDir, 'sdk', name), path.join(outputDir, name));
@@ -66,6 +49,7 @@ fs.writeFileSync(path.join(outputDir, 'PROVENANCE.txt'),
   'toybox.js and core-4.6.0.wasm are copied without modification.\n' +
   'sphero-sdk.js contains the reachable SDK modules and webpack bootstrap; the Edu UI entry is excluded.\n' +
   'Local SDK patch: WebBluetooth.destroy clears timers before state reset and disconnects tracked GATT devices before dropping handles; late chooser/connect results cannot reopen a disposed session.\n' +
+  'Lifecycle protection also covers native reconnect attempts, retry timers, service discovery, and characteristic discovery after teardown.\n' +
   'IDE session protection: monotonic scan epochs and module-shared device ownership preserve replacement connections when old native results arrive.\n' +
   'Recovery patch: reviewed module-6490 transformations adapted to this archive before local teardown/scan epoch safeguards.\n' +
   'Neo build-candidate.cjs SHA-256: 05d05e46aa0f7d4503014a7eb5f26cb3cf1a168c11003e4e9e8a9e18319cb743\n' +

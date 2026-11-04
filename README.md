@@ -2,7 +2,16 @@
 
 A browser Python editor with a Sphero BOLT+ connection, aiming controls, an async starter program, disconnect recovery, and a green connection dot.
 
-[Download the Moodle-ready ZIP](pythonide-boltplus-moodle.zip?raw=1) or [the development ZIP](pythonide-boltplus.zip?raw=1).
+## November 4 BOLT+ feature update
+
+Choose **Emoji + animations** to search the complete supplied image/animation catalogue, including 58 emoji graphics. Python now accepts asset names and `DisplayImage` / `DisplayAnimation` constants. Custom GIF uploads are not exposed.
+
+Choose **Light + display example** to read lux and show colour/messages on the
+robot without driving. See [BOLT+ features and examples](BOLTPLUS_FEATURES.md)
+for all exposed commands, coverage limits and the physical-device checklist.
+The ambient-light parser mismatch is fixed; hardware acceptance is pending.
+
+[Download the November 4 feature ZIP](pythonide-boltplus-display-library-20261104.zip?raw=1). [Download the matching Moodle ZIP](pythonide-boltplus-display-library-moodle-20261104.zip?raw=1). Older ZIPs are historical; this change does not publish to Moodle.
 
 ## Open locally
 
@@ -54,11 +63,17 @@ Ordinary `input()` uses Pyodide's JSPI support in current Chrome/Edge and opens 
 
 ## Moodle or another HTTPS host
 
-For Moodle, use **`pythonide-boltplus-moodle.zip`**. Create a new **File** resource for testing, upload the ZIP, click it and choose **Unzip**, then click **`index.html` → Set main file**. Choose **Appearance → Display → Open**, then **Save and display**. Keep all five extracted files together. This flat package bundles the SDK, adapter, aiming dialog, and IDE scripts into `index.html`; `python-worker.js`, `toybox.js`, and `core-4.6.0.wasm` sit beside it, with `README-MOODLE.txt`. It avoids the nested `vendor` script path that was unavailable in the reported Moodle test. Build it with `python3 scripts/package-moodle.py`; `node scripts/check-moodle-package.mjs` checks both extracted layouts against the local server.
+For Moodle, use [**pythonide-boltplus-display-library-moodle-20261104.zip**](pythonide-boltplus-display-library-moodle-20261104.zip?raw=1). Create a new **File** resource for testing, upload the ZIP, click it and choose **Unzip**, then click **`index.html` → Set main file**. Choose **Appearance → Display → Open**, then **Save and display**. Keep all five extracted files together. This flat package bundles the SDK, adapter, aiming dialog, and IDE scripts into `index.html`; `python-worker.js`, `toybox.js`, and `core-4.6.0.wasm` sit beside it, with `README-MOODLE.txt`. It avoids the nested `vendor` script path that was unavailable in the reported Moodle test. Build the current candidate with `python3 scripts/package-moodle.py --output pythonide-boltplus-display-library-moodle-20261104.zip`; `node scripts/check-moodle-package.mjs` checks both extracted layouts against the local server.
 
-The general development ZIP, `pythonide-boltplus.zip`, still uses `python-ide.html` plus separate scripts and its `vendor/sphero/` folders. It must also be extracted with all supporting files intact. For either package, use **Open** or **In pop-up** so the page runs at the top level. Embedded pages need explicit Bluetooth permission and may be blocked by the host's permissions policy. Moodle installation and physical classroom devices must be checked on the actual destination.
+The current development ZIP, `pythonide-boltplus-display-library-20261104.zip`, still uses `python-ide.html` plus separate scripts and its `vendor/sphero/` folders. It must also be extracted with all supporting files intact. For either package, use **Open** or **In pop-up** so the page runs at the top level. Embedded pages need explicit Bluetooth permission and may be blocked by the host's permissions policy. Moodle installation and physical classroom devices must be checked on the actual destination.
 
 The original IDE is retained as `python-ide.original.html`. The supplied Sphero ZIP and extracted `reference/` are unchanged reference material, excluded from the small IDE distribution.
+
+The CSE1240 API adds explicit async heading, native distance, display and
+fresh-light commands while preserving reconnect recovery. See
+[CSE1240_API.md](CSE1240_API.md) for that API contract. Historical course
+publication notes and recovery records are retained locally and excluded
+from this public runtime distribution.
 
 ## Validation and source
 
@@ -72,6 +87,16 @@ npm run test:neo
 
 With the local server running on port 8765 and Google Chrome installed, run `npm run test:browser`. Rebuild the packages with `npm run package` and `npm run package:moodle`, then check the extracted Moodle ZIP with `npm run check:moodle`. The browser checks use real Pyodide plus a separate simulated robot connection. Simulation does not validate a real robot. See [VALIDATION.md](VALIDATION.md) for the checks actually completed.
 
-Sphero's transport comes from the supplied ZIP. `scripts/extract-sphero-sdk.mjs` reproducibly selects the 14 SDK modules from the original bundle and applies `scripts/neo-reconnect-patch.cjs` before the IDE lifecycle safeguards. The ToyBox worker and WASM core are copied unchanged. See `vendor/sphero/PROVENANCE.txt` for hashes and provenance. This copy does not add the full Edu app, user accounts, cloud saving, EV3, or sensor interfaces.
+Sphero's transport comes from the supplied ZIP. `scripts/extract-sphero-sdk.mjs` reproducibly selects the 14 SDK modules from the original bundle and applies `scripts/neo-reconnect-patch.cjs` and the shared `scripts/patch-ble-lifecycle.cjs` safeguards. The same guarded transforms can repair the supplied full resource with `python3 scripts/package-original-resource.py`; that optional build requires the unchanged original ZIP. The ToyBox worker and WASM core are copied unchanged. See `vendor/sphero/PROVENANCE.txt` for hashes and provenance. This copy does not add the full Edu app, user accounts, cloud saving, or EV3. The Python sensor and display bridge is documented in BOLTPLUS_FEATURES.md.
 
 The original supplied reference archive, extracted full Sphero app, local verification records, and saved device-test files are excluded from this repository. The committed SDK supports normal use, tests, and packaging without that reference archive; optional SDK re-extraction requires the matching archive extracted to `reference/`. Third-party attribution is retained in `vendor/sphero/PROVENANCE.txt`; no blanket license is applied to the Sphero runtime files.
+
+Package builders accept only their unversioned working output or the current
+versioned filename derived from the HTML release identity. Historical release
+names, source archives, paths outside this folder and linked outputs are
+rejected. A candidate ZIP is checked in a temporary location before atomically
+replacing its intended output.
+
+For a self-hosted pinned Python runtime, the browser test accepts
+`IDE_TEST_PYODIDE_URL` (an absolute runtime folder URL). Its receipt records the
+chosen runtime. This test option does not change the app's default CDN URL.

@@ -24,7 +24,12 @@ try {
     await page.waitForFunction(() => typeof window.SpheroSDK === 'function' &&
       typeof bolt !== 'undefined' && !!bolt.sdk?.toybox &&
       !document.querySelector('#bolt').disabled && !document.querySelector('#run').disabled,
-    null, { timeout: 60000 });
+    null, { timeout: 60000 }).catch(async error => {
+      console.error(JSON.stringify({ path: relative, errors, failedRequests,
+        help: await page.locator('#help').textContent().catch(() => null),
+        status: await page.locator('#status').textContent().catch(() => null) }));
+      throw error;
+    });
     assert.deepEqual(errors, []);
     assert.deepEqual(failedRequests, []);
     assert.ok(localRequests.every(url => !url.includes('/vendor/')), 'no vendor request needed');
@@ -39,6 +44,15 @@ try {
     await page.locator('#inputReply').press('Enter');
     await page.waitForFunction(() => document.querySelector('#out').textContent.includes('>>> Finished'));
     assert.match(await page.locator('#out').innerText(), /Hello, Moodle/);
+    assert.equal(await page.evaluate(() => window.BoltDisplayLibrary.images.length), 663);
+    assert.equal(await page.evaluate(() => window.BoltDisplayLibrary.animations.length), 82);
+    await page.locator('#displayLibraryButton').click();
+    await page.locator('#displayAssetSearch').fill('angry');
+    await page.locator('.bolt-display-tile').first().click();
+    const thumbnail = page.locator('.bolt-display-detail img');
+    assert.match(await thumbnail.getAttribute('src'), /^data:image\/png;base64,/);
+    await thumbnail.evaluate(image => image.decode());
+    await page.getByRole('button', { name: 'Close display library' }).click();
     page.once('dialog', dialog => dialog.accept());
     await page.locator('#starter').click();
     const source = await page.evaluate(() => document.querySelector('.CodeMirror')?.CodeMirror.getValue() ?? document.querySelector('#code').value);
@@ -54,7 +68,7 @@ try {
       asyncStarterDispatched: true, localAssets: Object.fromEntries(loadedAssets), noVendorRequests: true });
     await context.close();
   }
-  const path = new URL('../verification/moodle-package-check.json', import.meta.url);
+  const path = process.env.IDE_MOODLE_RECEIPT || new URL('../verification/moodle-package-check.json', import.meta.url);
   const record = JSON.parse(fs.readFileSync(path, 'utf8'));
   record.browserChecks = results;
   fs.writeFileSync(path, JSON.stringify(record, null, 2) + '\n');
