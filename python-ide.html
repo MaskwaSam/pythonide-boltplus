@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="pythonide-release" content="boltplus-display-library-20261104">
 <title>CTS Python IDE</title>
 <link rel="icon" href="data:,">
 <!--
@@ -77,6 +78,7 @@
   <button id="stop" disabled title="Stop the program and robot">■ Stop</button>
   <button id="bolt" disabled>Connect BOLT+</button>
   <button id="starter">BOLT+ starter</button>
+  <button id="lightDisplay">Light + display example</button>
   <button id="open">Open .py</button>
   <button id="save">Save .py</button>
   <button id="clear">Clear output</button>
@@ -102,7 +104,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
 <script src="vendor/sphero/sphero-sdk.js"></script>
 <script src="bolt-connection.js"></script>
+<script src="display-library.js"></script>
+<script src="bolt-course-api.js"></script>
 <script src="aim-controller.js"></script>
+<script src="display-library-ui.js"></script>
 <script src="ide.js"></script>
 </body>
 </html>

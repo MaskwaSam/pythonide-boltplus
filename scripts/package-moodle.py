@@ -3,18 +3,38 @@ from hashlib import sha256
 from html.parser import HTMLParser
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
+import argparse
 import json
 import re
+import base64
+from tempfile import TemporaryDirectory
+from package_output import output_path, release_id
 
 root = Path(__file__).resolve().parent.parent
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output', default='pythonide-boltplus-moodle.zip')
+parser.add_argument('--verification-dir', default='verification')
+args = parser.parse_args()
+try:
+    output_file = output_path(root, args.output, 'moodle')
+except ValueError as error:
+    parser.error(str(error))
+verification = (root / args.verification_dir).resolve()
+verification.mkdir(parents=True, exist_ok=True)
 html = (root / "python-ide.html").read_text()
-scripts = ["vendor/sphero/sphero-sdk.js", "bolt-connection.js", "aim-controller.js", "ide.js"]
+scripts = ["vendor/sphero/sphero-sdk.js", "bolt-connection.js", "display-library.js", "bolt-course-api.js", "aim-controller.js", "display-library-ui.js", "ide.js"]
 source_hashes = {}
 for name in scripts:
     source = (root / name).read_text()
     source_hashes[name] = sha256((root / name).read_bytes()).hexdigest()
     if name == "vendor/sphero/sphero-sdk.js":
         source = "window.__SPHERO_RESOURCE_BASE_URL__ = new URL('./', document.baseURI).href;\n" + source
+    elif name == 'display-library.js':
+        # Inline local thumbnails to retain the five-file Moodle layout.
+        manifest = json.loads((root / 'display-library-manifest.json').read_text())
+        for path in sorted({item['path'] for item in manifest['thumbnails']}):
+            data_url = 'data:image/png;base64,' + base64.b64encode((root / path).read_bytes()).decode()
+            source = source.replace(json.dumps(path), json.dumps(data_url))
     elif name == "bolt-connection.js":
         for old, new in [
             ("new URL('vendor/sphero/toybox.js', document.baseURI)", "new URL('toybox.js', document.baseURI)"),
@@ -65,6 +85,31 @@ Sphero SDK code is third-party code from the user-supplied archive;
 no new license is granted here. The archive did not supply the LICENSE.txt
 files referenced by its bundle headers. Original worker header retained.
 """
+readme = readme.replace('pythonide-boltplus-moodle.zip', Path(args.output).name)
+readme += """
+
+EMOJI + ANIMATIONS LIBRARY (November 4 local build)
+Use Emoji + animations to search the supplied Sphero app's 649 images
+(including 58 emoji graphics) and 77 built-in animations, plus random choices.
+Choose Use example, then connect/aim and Run. Names and DisplayImage /
+DisplayAnimation constants work alongside numeric IDs. Thumbnails are embedded
+in index.html; there are no extra preview files to upload. Custom GIF uploads,
+URLs and arbitrary Unicode emoji text are not supported. The source catalogue
+does not establish newer firmware asset coverage or physical display output.
+"""
+readme += """
+
+CSE1240 commands are explicitly async: import them from sphero and await
+set_heading, roll_to_distance, stop_roll, set_main_led, set_display_text,
+get_ambient_light and delay. roll_to_distance uses centimetres and a whole
+raw speed from 0 to 255; raw 25 is not 25 percent. It waits for the native
+firmware distance-completion notification, not a timed approximation.
+get_ambient_light stops first and waits for a fresh valid sensor packet.
+Stop/error cleanup finishes before another run. An uncertain distance move
+requires disconnect/reconnect before more motion; old completion packets
+must never finish a later move. This software behavior still needs physical
+Chromebook/BOLT+ distance, display, sensor and recovery acceptance.
+"""
 files = {
     "index.html": html.encode(),
     "python-worker.js": (root / "python-worker.js").read_bytes(),
@@ -73,12 +118,13 @@ files = {
     "README-MOODLE.txt": readme.encode(),
 }
 assert all(Path(name).name == name for name in files), "Moodle package must be flat"
-package = root / "pythonide-boltplus-moodle.zip"
+build = TemporaryDirectory(prefix='.package-build-', dir=root)
+package = Path(build.name) / output_file.name
 with ZipFile(package, "w", ZIP_DEFLATED) as archive:
     for name, content in files.items():
         archive.writestr(name, content)
 
-restored = root / "verification/moodle-restored"
+restored = verification / "moodle-restored"
 nested = restored / "pluginfile.php/123/mod_resource/content/1"
 with ZipFile(package) as archive:
     assert archive.testzip() is None, "ZIP CRC check failed"
@@ -103,6 +149,9 @@ record = {
     "bundledSourceSha256": source_hashes,
     "browserChecks": "pending",
     "actualMoodleUploadTested": False,
+    "release": release_id(root),
 }
-(root / "verification/moodle-package-check.json").write_text(json.dumps(record, indent=2) + "\n")
+package.replace(output_file)
+build.cleanup()
+(verification / "moodle-package-check.json").write_text(json.dumps(record, indent=2) + "\n")
 print(json.dumps(record, indent=2))

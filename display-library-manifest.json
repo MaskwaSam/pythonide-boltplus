@@ -1,0 +1,2994 @@
+{
+  "archive": "sphero-boltplus-ev3-file-resource-20260927.zip",
+  "archiveSha256": "7509b9df4bfdb0f8ee0cf33916e1c2ad0aed049d1f2f2a7eef2d7e3ed161e091",
+  "bundle": "static/js/main.55f08aa7.js",
+  "bundleSha256": "c88d1773f043be4509c945c3a9b611eb3f8ea9f9e7cbb7d849b61f4b57bbf32d",
+  "note": "Named assets from the supplied Sphero Edu enums; robot firmware contains the display data.",
+  "images": 663,
+  "animations": 82,
+  "concreteImages": 649,
+  "concreteAnimations": 77,
+  "emojiImages": 58,
+  "thumbnails": [
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/airplane.png",
+      "sha256": "b651f79834bb333f2f82f5189c54611f0dd8222cab33be6039da61bbe9507aaf"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/alarm-clock.png",
+      "sha256": "d9e1155fdddcecad796bdef8e4e6fb60190d4b33ef97d1eb05f844bc9d787d13"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/ambulance.png",
+      "sha256": "bbf78fd10b10e62a02bb4986534818a453e74e7cf99a840d6083e838e8088abd"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/amusement-park.png",
+      "sha256": "03fb738cd5122355dc5a22b209a1195dce89e5ee08b579a3749e4e33d21bcb4e"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/angry.png",
+      "sha256": "a0db9c50ac7b76cdd43cc792418ec9c48aef4918abf589b7ce76b1cab29e2c23"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/ant.png",
+      "sha256": "ab4abdfb319e8afce4a78aec12386a7b6adf198d6645e667c9cf601a49ae8a8b"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/antenna.png",
+      "sha256": "1df47d4ae3753473669e043f8c8c543e13f048a36183eff5c2f7833bfef6cb21"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/antenna-bars.png",
+      "sha256": "454fa85d6b0f9644b91b107503815d24d57919850aa7b31467c330780ce5d1af"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/apple.png",
+      "sha256": "c3b24cc286592d2a53faebf6fdc2754dba413b81a7f56ce22d3b6a6fd8ebbfbc"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/arctic.png",
+      "sha256": "ff126987f1cb69f36b19ddbcd24fa3eaa5ca43a2691606e663538edd00316fcb"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/arrow.png",
+      "sha256": "20d25874a357645509f6c86f96867e90ce99d364ca8befec1021db19069a0690"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/arrow-2-way.png",
+      "sha256": "2df84cb64132eaea385555844cbfa618346b026fc614087306ca63efb91d6928"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/arrow-45.png",
+      "sha256": "00f8ccf61450d5cb849056829cf557ec83200fb29621b86afce587008803d94a"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/arrow-90-left.png",
+      "sha256": "778475334f6855994c3a1fcaf97ca605567fddcc59b6f7a0e774ffbbaee42c61"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/arrow-90-right.png",
+      "sha256": "6ee00cfd46a03de7123d73caa51ce2b026ed84d13df834c95102f9125522220a"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/baby-chick.png",
+      "sha256": "5049e24e4a727ceb3eb0f11f360119e28041ecc7ed6d2b52a0acd5eecc9d40d7"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/badger.png",
+      "sha256": "3d678fa2469beb4c2beb0b875f91976d63cfdffbfaa682a26656cb7d0b8de359"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/badminton.png",
+      "sha256": "771c54839024d0d2cb48ab6775b6ed766ea6db63378e0c51088c7bc9321c909b"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/ballet.png",
+      "sha256": "9864b929fbb4f66daae12ec20f887ad23c6ee2cfb9a9e22afdb97bc3b46ce3a2"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/balloon.png",
+      "sha256": "4c44583a09cd35b281c1a0d06463387601f1526ed46039582463bb52f1237152"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/bandage.png",
+      "sha256": "a8af2911a994a34b6882055565b855121496d71c1aaf2cc7dacf12cc6a2d687f"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/baobab-tree.png",
+      "sha256": "853e627cfae3fe0ea50f111e000cd07313a3c97856199c410ca6279fe0e1994e"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/baseball.png",
+      "sha256": "665e9f02055451b2e8389c21e2d9e3a55d28f1742f6d6b9aba4b6872c1821d05"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/basketball.png",
+      "sha256": "5523bb7a4975eba21f223241d3603d405814dffd4dc606d85517bce4ba9e37d0"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/bat.png",
+      "sha256": "404629a293a1f03155b44788ded1633695911095c4da5c6f859f1a9c7b4d94fb"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/beach.png",
+      "sha256": "f88df784a87504e81b9affed57d0556d148fd8018d3151d897946880921c93ea"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/beans.png",
+      "sha256": "da766f0b1fd1c38efc5eaf3348d02761e583dddeaa27d86948792d053d4cddd7"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/bear.png",
+      "sha256": "8b6ecb928840bc378b1c56999294a8373442d3cf5190d6ce55b0d75d9e694d8b"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/bear-face.png",
+      "sha256": "f56980b48b0b4488ae84162245b87274646e34181dd525ab8b3fdb22559a6229"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/beetle.png",
+      "sha256": "796dd70fa0233b915da05fcdd0b3883d6f79f2f5b18c05992ddc72804f27ca87"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/bell-pepper.png",
+      "sha256": "14b38dacbf2fa6b21df7966156136d87f7eaa89e041748c70edcaba9fa1b37c1"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/bicycle.png",
+      "sha256": "ea22e07a2c0a75efabab7a6e478526efcaae4f3bcf80cf9e6b60fefd21f9b3cd"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/biohazard.png",
+      "sha256": "afbc6c456455439788b8204f8bf7c36eaae3fd95454154691efa2a7f1489ed12"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/birthday-cake.png",
+      "sha256": "804d791c130734bfca23431d3b441c47f3ade2585e3d089163e79e47dcc21c7d"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/bison.png",
+      "sha256": "24219dc4c5462b9901bc5b66cde158eae3fd0bce0fdd311b59d71d042e61c536"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/black-bird.png",
+      "sha256": "6bd8205a0041d0f38f6d659a3daf28fb6709d8f91a3ccd785d278d2e7c833a63"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/black-cat.png",
+      "sha256": "c5fa60cb09a9d018589d2074855863c80e7b0e848163105d1117e642520da520"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/blossom.png",
+      "sha256": "69059bb5e3293a49e9bbe9b185b818c9ed466f3acb036b4d28ed0d50ea7bf455"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/blueberries.png",
+      "sha256": "3db4b4a291141c9bbf9d0f3a07b0c3e81dfba539a794c7351ce10ee75e4dda8c"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/blue-bird.png",
+      "sha256": "e2a4580d60ca072013480a104d72e239997d48c30d8b63946e1d293fdd72f8dc"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/boar-face.png",
+      "sha256": "4e125a78e6b1656ff1d70acb0d5bcbdf1bf3ce5f3689b79e0ee049edd4019a17"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/boat.png",
+      "sha256": "e5e51673b35454b76c1d1eafd04bf63b133080505575fb47c9595cdb72e2cbed"
+    },
+    {
+      "path": "display_assets/boltplus_images/display_system_resources/thumbnail_png/bolt-plus-logo.png",
+      "sha256": "572bee1dbb2da205ac7cfd4453f351dac12a4d15cdcd69216d81cc7ecbe2b7b3"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/book.png",
+      "sha256": "21853c4e2b82ad5261bd97e0e3354c6d946128fee733111a5152854161b4a269"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/bouquet.png",
+      "sha256": "0ec9b7193e871853fab587400884f6245351e97a01b580087c8f9af2cc1d0bcb"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/bowling.png",
+      "sha256": "90e29d7380a02ced0c192332051b6f4bc8828cf5b7d5c8e288a4a3af0f57a4a2"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/boxing.png",
+      "sha256": "3d6e85614aa60b2fcf8dc9bfff176642f5b2bf125635a0a4ab77209b757ca1e0"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/branch.png",
+      "sha256": "943df0ad212d7da9359061ada04eba595bc4e07772dff93d46779df02666da46"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/bread.png",
+      "sha256": "84bb548d90c098efdbae2fa618ee3e47b5d3b4682de938abd2705402d7668292"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/bright-button.png",
+      "sha256": "817cd36689ad501157b5bd74686e77a8a830efc4044092b007a8b24c0e591e0c"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/brightness1.png",
+      "sha256": "91118902b5ec6eda64c571a71a5c800f302f7379c7712068493d34647295876a"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/brightness2.png",
+      "sha256": "bc29d88a1872f2521b5dbe2fbd5899b8b9219b11bd6b2ea73bedbcc396d840b0"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/brightness3.png",
+      "sha256": "33b5a08e4839b781e44a0fb34b2a91895de3613a8fa0f3427c1074ed2f00c4ce"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/broccoli.png",
+      "sha256": "dbc3ee1f003eae6c4b2e965085b2ce06d09f50f8ecfccc203ead980a417e960b"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/brontosaurus.png",
+      "sha256": "4998007b53f347741dc3997d23c791d32db39b00193ea9c3420562480d0fed07"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/bronze-medal.png",
+      "sha256": "f2cb17c2631834cb10382dcef92114d4977fc3fa969c9c94d2b5bd3654fe7f3d"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/broom.png",
+      "sha256": "ad53367e9231efca4f9af3ab326a02651b8d18586fc4f1b320f0daed5565acea"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/bubbles.png",
+      "sha256": "c82fa53b37dd849167189696161df9defcd71609eeae9da0e451785334719842"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/bus.png",
+      "sha256": "722965af25e99708e4281465e6c0eff6484c514dc9e3e8ed0156509a32ff4857"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/butterfly.png",
+      "sha256": "902ae4acd2302ab56da703aecf189356131bfc40332d307f120092f6699779e7"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/butterfly-eggs.png",
+      "sha256": "2ec2ba5b656cd2ae153a5305c30536e9f3d8d32cd52ffa5a1b893e3cef3f222e"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/cactus.png",
+      "sha256": "72e8a1b197ad0140d2d69247d5b8ac3746a7cf911586c5621e938bec0927a2c3"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/camel.png",
+      "sha256": "71abdc1d82e91c789dcfcec952e4a1f728c92a471acd89e06011676c659ccb79"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/camping.png",
+      "sha256": "b48ce34b259ab827ea9fafe50e022bf3c800604bd7f60f54bc54257805f244b3"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/candle.png",
+      "sha256": "876fc6ad34f353ca4e298bd680835ffb97e1842af16b1f5c3bf695b02669a9e5"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/candy.png",
+      "sha256": "abc122233c1c3b703b1c9cfb4fc539e3c9a92c0e192fd3343ae20481bbca2c2a"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/canoe.png",
+      "sha256": "2004ddd7fe7fa41f131f97f40caec996d765374a754ccbf9252f902add163bf6"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/car.png",
+      "sha256": "aa781060238596301c02753894664de9e2271dadaa646699a3e04209fa895b6a"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/carrot.png",
+      "sha256": "d3db293746a0593d192cc8d4e50d26c594cdbc9ae9b5241c4b8e3bd9c24df3ff"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/cassava.png",
+      "sha256": "2b9df4cc083ec32823977aa83598b457a061d62c34615aaf0086d030d509ed36"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/castle.png",
+      "sha256": "2b28ad127c8f9009f1ef2ca88e7d90a6480088731cd667c84183064d203cd5de"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/cat.png",
+      "sha256": "36f9429a87eb8813006305b0f1c2abc64f45c7cfe557eebac3a39beb91664dfe"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/caterpillar.png",
+      "sha256": "1cd2b2aff851e9cdf5f9cea7c5b0f41bae03b35e7f28c03bbd902f50006e4727"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/cat-face.png",
+      "sha256": "77ab874efc239bc9fd9b578777dbdd13e6e39399fceefe5cc4846ca7965e7a12"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/chair.png",
+      "sha256": "fb26947b728de93aa2fed728f422a0cf0721dbe6aded4696fc28b5cbb8c3d004"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/chart-decreasing.png",
+      "sha256": "0c42d9737a51885b57dba049a4ac6911c26d9adf371ce70cfbafcdb55cacd7e0"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/chart-increasing.png",
+      "sha256": "cf54bb5214f496b2cad9a1abaf502094dedaaa8cdf0c67f5d3fdcb4d1a30dbb4"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/check-mark.png",
+      "sha256": "22f950a0fe28df0e82b5570d3c0a4dca5a1405c90d35a670554179297248c18d"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/cheese.png",
+      "sha256": "926030eb370bd6d2eb8f21d88be982c594cc0a48dcb6089849a9e2d105e77260"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/cheetah.png",
+      "sha256": "c071317c57c87ea8b8952653a9807d8db606911e3205077b1a82c2662aee16de"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/chicken.png",
+      "sha256": "cdf30dda8c1c626d86ea28bb63e4e9516e95146d469fef7bfc3b12600353da09"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/chicken-egg.png",
+      "sha256": "f55b57fdd0fee9292ec80aa0de1eb3fe2dc999744b92a7b2d3f7bcc71cb9d42c"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/chipmunk.png",
+      "sha256": "e61d3046b8620abe2a601ee3c1598c742711d1b33c52292a403405a1a428c823"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/chrysalis.png",
+      "sha256": "32df9b7ea9479e64c5036f919c8d8bddae90091dfadafaccf96c2d8add337fff"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/city.png",
+      "sha256": "fa2f59d6f90da52bfed9d3a1017052445e42cb04fcbc003312643316544344c7"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/clapping-hands.png",
+      "sha256": "f0a8b160da89e52db4f0f1c620a8a52dea663ffe1f5ca09b5c5f5fa92b3f9a16"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/clapping-hands-1.png",
+      "sha256": "ceac80790e35c9cef967fbc60e4d306cbe009ea0109801429426754cbb572e13"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/clapping-hands-2.png",
+      "sha256": "95126a86b03ed59de23d3a27cd046c5ea072b3c906702dbf5836cf06c3070e48"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/clapping-hands-3.png",
+      "sha256": "15b19a0200f703ae9541588243096375e807c35f50e52661384ef633242ee8d4"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/clown.png",
+      "sha256": "5aaabefb6008dc511b2b44b09a8af56f6926e25faad99b36ef0977d34b89cdca"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/coconut.png",
+      "sha256": "10ebdc41db8f59d1fe93d63d2f4a9f670fa73e1be3de2c8531c36f99386e8c0e"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/coffee.png",
+      "sha256": "6eba5603fafe07372539634a9918b8a8a61b7746cb241dbbb9784b47a92aa6c3"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/coin-heads.png",
+      "sha256": "d3f2190d2c11af3946c184cde675c1694dac3b469e0eb558dc7280669f5c7a15"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/coin-tails.png",
+      "sha256": "b79d3831a971aac03968600c6344371107f013099317f34c65c0330306fb2fef"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/cold.png",
+      "sha256": "ff7cbce0b1eefe2ba32d319b21f89f9e73250ec97f7e52e88d688c2f8567d943"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/comet.png",
+      "sha256": "398eba42cbf645ab9d90ed7decb7340920af58df78ecb1840cf7057e35018b40"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/compass.png",
+      "sha256": "147c73fea7d53e3b3d7018fa8c8e753e5655e6e779e9cec50db20245d6bb0746"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/confused.png",
+      "sha256": "92cf1e44042dfc26baa7e4f765b36e7ebd53467982e3772765ab69af519e8ef6"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/cookie.png",
+      "sha256": "fa8f7dcdd0cab0ffad892e418fab6117161f7f8b8b37295f275d3097b4d88b2c"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/coral.png",
+      "sha256": "300dc3708272267c4d89bf5d3c51f554fb87bb43030dbf7dd355bb618d87c075"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/corn.png",
+      "sha256": "f818862d053646843e4508e324640a51568a56f7bdc51a5e86e43f177281e605"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/cow.png",
+      "sha256": "25e9c0d6875efd6bb3c7ffa0fb8726b010ee5d15cf87911612804b31270f6fe8"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/cow-face.png",
+      "sha256": "bd023fd77783a92bdce6260b8bce3c7a1d5a3d5eecaa24495dd59d7fd3b1c5f2"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/crab.png",
+      "sha256": "733e9b149fec140b7c86a1372c2375f9a714539656cfa73875fd7fa10eeab5a8"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/crayon.png",
+      "sha256": "00650c985d29768a6aea3b492a00c7d298689ce4f0a603f9e35a2434f30b4d09"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/crescent-moon.png",
+      "sha256": "0e78514f870efea2d4288ed9191fa82abbe5d987a8c80b3f63d15da22c3fd734"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/cricket.png",
+      "sha256": "67e56e6297c988bc29ce21d3dfd60da05a5ce57373e3667bcc9322fe06b34b90"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/cricket-bat.png",
+      "sha256": "4803da6a19d6452e8f6b7cba2e9058feffb6dd8bc3b574e2c3daa5db3a30cc88"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/crocodile.png",
+      "sha256": "2e490f6eea858ad6edd817357091039e20b1450727f8e449d42bcdbda7c2e387"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/crossed-fingers.png",
+      "sha256": "3341f8959e89f1864417f0e4daa481a5378251eebe4281d2f1adb432e696f541"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/crossed-fingers-1.png",
+      "sha256": "9371eb06c1716f32f792677c51a1efeb21d23d18f2dcd4308fe4812577ebff03"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/crossed-fingers-2.png",
+      "sha256": "912f5bbd5a678c4b667332ab1e0d785f007c6cc345733af0469422acb9f58e3d"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/crossed-fingers-3.png",
+      "sha256": "0bed373a81b6f08e3ba6b238eca0d01f80942f27a995072d8e999ac9d0ed3cb0"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/cross-mark.png",
+      "sha256": "fd303e08bf013955c46be63e333a69930a925d895579183f3612f7185079385b"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/crown.png",
+      "sha256": "7ab66f61326a8074bc351af0928483013d50d58b9cdfc52f515bd565391711a0"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/crutch.png",
+      "sha256": "710d5b06b1fcdd7338b7cc4b72cfe44cf496c35a7975663aa9348e8066121123"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/crying.png",
+      "sha256": "0c851b9a4119aeed09393fd41da94bfecda9bd5403b36c6b6ea34c16c1a29c4d"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/crystal-ball.png",
+      "sha256": "ab9a16685daa4463db5346621056e7f6c6dbb5e1609f7761566b72279bdd86a0"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/cupcake.png",
+      "sha256": "ca076d52c54371c08f5d1a14133da68cb6bcc999a1c8c0c2bef8408dc8177709"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/curry-rice.png",
+      "sha256": "46b2eb175be2d3047e8390d81a5130889e1f20df1d859801083aa5e8e95002f8"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/deciduous-tree.png",
+      "sha256": "2c8d0003992023c53dbcd1ec223507f79a057043426d8d48ee90518a0ccc7494"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/deer.png",
+      "sha256": "6771cbcb6f62184674b7459af21a9262b76997d6a2fa7cd9979a9ddc99b83012"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/delivery-truck.png",
+      "sha256": "9cb4e58aae71ee4ef9748124f2759f676d9afc104dadcb4facbe7ab33f3b786b"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/department-store.png",
+      "sha256": "d7d7f4490b2092f8bb4b0d776f06fd8244226c4a4dc05fbc2194a60f04775a9a"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/desert.png",
+      "sha256": "7a663af2df9b65e47f5a08b6301378c199191662e4c5fec3ce1096ceea578646"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/desktop-computer.png",
+      "sha256": "1d5c1e57c00a2e3e9971f9e586ed64e6eb364e3b2084b71b83799bc535a3c19b"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/dice-1.png",
+      "sha256": "dde90c2f53c8f4ba68eded21ced61883d7d2a3a478e2642eaf7df03cd0935921"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/dice-2.png",
+      "sha256": "6033120541cd4c10e063f7c48dfbf20258d3d64789ce199e45035be7a1acf671"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/dice-3.png",
+      "sha256": "40049b24c34701a47f3181dfe7f9672db15aec359175b21c52d996b33a3b14aa"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/dice-4.png",
+      "sha256": "1940812ab28dd36ecf6f97886309a3f6c35efc84275ed7f4c1f7ab9d0c8a509e"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/dice-5.png",
+      "sha256": "17011fc35f5c53ab187f70c7f12023850dc802211e2f75fa935ee0e3f9aafe22"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/dice-6.png",
+      "sha256": "64061fc220b06830b363aaff7fb00c6033255793db74c95a59b35a81fdbb5597"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/dim-button.png",
+      "sha256": "08b9882994811ec40560c461304be9365fbe62905402132b2285d5da8d694fb4"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/disco-ball.png",
+      "sha256": "ec86965f2a4bbaf351b05f62ae006a13338f8b79beabf07feca963c18bfcbf9a"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/division-sign.png",
+      "sha256": "69ed12ea2e9f5f3cf7fe2127b9bc53054ef63625c5e954d363e8b28f168e03c1"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/dizzy.png",
+      "sha256": "5dd91afe82658c9725a0e941b4f9ff1950a56ef5a4dbd9d59b1cd6464439a0ea"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/dodo.png",
+      "sha256": "b04af00ca2bc6bf5a468463ad497a7e8921e2eb6e64f9eed48f4ead9e6f52ea0"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/dog.png",
+      "sha256": "1109ce6c2e66d19323603d78a896bb80e90732ad528a1f44b014c9be92e94fad"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/dog-face.png",
+      "sha256": "7c4420175b6d58cbab930c91f732bd75e8432da770e4951b0bc8100fa0eb1139"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/dolphin.png",
+      "sha256": "a2767c58ce5cddf0bb0b1b18132314a74b1dd8547246d03bb0f0049b19830ebd"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/donkey.png",
+      "sha256": "334ded9f4e57ff957deb72fe5527a9fb4a829af23b1aae1e0fb6be2c575443f9"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/door.png",
+      "sha256": "3941570dd38cd572aadc745f9bfa4cf4316474a1fd1a2443b96c062cca73f28c"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/doughnut.png",
+      "sha256": "2f999210765fba5838c449dd7e450a5b621a099fe945638945fba7080c3b7538"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/downcast.png",
+      "sha256": "d853cf4dad99b993a0053c5d556bc8e361394057a2670369efb0ae3a88e151a4"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/dragon.png",
+      "sha256": "3bbcb6fd71537537a2c0ede0d3d7846814fa77372fed7b896391d16e4c0c9bef"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/duck.png",
+      "sha256": "5c9b696af9c55d72e366973c33e389ad97dfee9579455b8de44ba29aaf3c76fc"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/dumpling.png",
+      "sha256": "7a5231ca28b66dd332a1a03bc5a0fef6fc3853fd8ca04e25ab4788143594665d"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/eagle.png",
+      "sha256": "6e348fcba9765558b280cc98f6da09e456fa7f14c781667db2a02ae042585090"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/earth.png",
+      "sha256": "9fad724bbde9c5eb8c5265d7f8239899a3f221a875895a9792248bb237f84fbc"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/8-ball.png",
+      "sha256": "9d5f050d1a74c41e20298938408945957ee1163c27372ff2e1ef06c89026a2f0"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/eight-oclock.png",
+      "sha256": "bc04d25d5e68198b99d26e85533025a18f954344356b46d458bed8e8b0d6a494"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/eject.png",
+      "sha256": "d5801ab63aec2b1f9a196cabb1ef7a16fce1c7b5a0b32a39183e9109504c90c9"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/elephant.png",
+      "sha256": "1c0e55b42217831246ae4739af7e340ae5b586e0dfe9a5a0d467ca046c37638d"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/elephant-face.png",
+      "sha256": "fd2dbe22f581bc158efc193185f4764592c4a50c0ae27178213f59b71e2f8c4f"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/eleven-oclock.png",
+      "sha256": "d872c46854f02b46ec18bc56fa70ea31dae3771da7b9fda279d34b1ca345cf89"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/envelope.png",
+      "sha256": "3753ca7cc34cee00688b23cb11257ca65a8c543586f213a49bc949a8b9561f48"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/equals-sign.png",
+      "sha256": "c6c09408c024ce48ca804dc7120f221834949df39625af3757505fbd68ab2d0d"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/evergreen-tree.png",
+      "sha256": "d84b7d0fa3ebf0871307c8ce0b2d22ab329fe4c0915b359bb09b186cd1d3246b"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/exclamation-balloon.png",
+      "sha256": "19b67b4b9f857ac12a1c99d03f47ec91b5d74e52df4bcfaf31c3bb3de0f094e2"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/exploding-head.png",
+      "sha256": "6796821f297b7dea323f5f14f1c25a3b53e348140d58dccff9ff5d6b9b9c9c4e"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/explosion.png",
+      "sha256": "2e6e60a5b6085ecbb05f464c9207db9590ada6ab3f07a974d1ebb7b938cdf4f9"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/expressionless.png",
+      "sha256": "9e9e8a79e627f9aad114c998611a0cabdc58e9514fe31a4206c8f15cce13c5bf"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/factory.png",
+      "sha256": "b3d85dc1ec19c4071a2a5d8ba842b632b502f75bdb4bbf67e2c50f3353d0c2f9"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/falafel.png",
+      "sha256": "0a307bde3c9327234ca9f742d804580bbf72c58eb12a78a9349eb9df68595277"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/fallen-leaves.png",
+      "sha256": "7975923555663858652c7a7eeb09c0a59f2a344cedb275873c67158d3044b33b"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/farm.png",
+      "sha256": "e25861cf196ffeceb24c521440650e4a86b3a8cf95b0a4aa673df449361549c5"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/fast-forward.png",
+      "sha256": "008675d074f7d1026aea5fb2766464222eb3307c8bcd8668a07834b41b0887b6"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/feather.png",
+      "sha256": "e920e8d7b75d829dade49961e934b1d05f10988d8eab668153e522e6dac91239"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/fern.png",
+      "sha256": "dfd2ce7602c90a09834b641aabab43203806338cb2f6646b5f3226d60eaa1cd7"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/fire.png",
+      "sha256": "4d304f170d41381e69626faeb3504fe51be7f76dd6e734500644b98f9fba4042"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/fire-engine.png",
+      "sha256": "ab1e6fbe74aa2c7264f518c040ed849ef34558aac2902a899996b7a606ab4e83"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/first-quarter-moon.png",
+      "sha256": "28fca9fa1c1c18cdf9925847b99640554e9b179bb2bd5a80c336cc0b6b6e075f"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/fish.png",
+      "sha256": "0f219874095542f0b56bc7c3114b245ecf61e6c9176d8b5164c74afe6fda886b"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/five-oclock.png",
+      "sha256": "8e1e60fe50dac4f402a97c5aaf24a746b61a9696366ba758b8a82a65e3f43e41"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/flag-waving-checkered.png",
+      "sha256": "dafb9552d8322419bd7862a63d23246e90d433a4d571e4cf6bf9e5515fc894fa"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/flag-waving-green.png",
+      "sha256": "a3e8aa7ddde825bdb642a2b96b5f8508b8a1a60a790002e31dd5ec77381cf7c1"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/flag-waving-red.png",
+      "sha256": "f603dc424ab3658db9b8ecbdf699ae2d151f4b8a5a26fcdc28c43eb4725c460b"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/flamingo.png",
+      "sha256": "f83218ab95d8ab28a30c4b5b4835f50ef63b223a30c70bbb4c29b56bff8d8452"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/flashlight.png",
+      "sha256": "362524c7555d6441e08b188d70329f73dc27fcb02adde738b5a8f26460748799"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/flatbread.png",
+      "sha256": "886a8d2706588444d9efe00e439927e0bcfa5fb65f2a373c6a5f8f4104cd0488"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/flushed.png",
+      "sha256": "c75b0d80e0e3309364cd4c23e684980ed0305e714ac4f9bfec8cc2933086ff4b"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/fly.png",
+      "sha256": "0451c8d4d928ad2398d99e60f369e8d581304aea624d31afd130042bd7625d79"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/flying-disc.png",
+      "sha256": "3b0d7807c7e57c8934fbf40522c5276ec3f82b5a80d44ab267022655281b388c"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/fog.png",
+      "sha256": "72f8564b5568b1e94b7a106a14000b0fd8b4cadc7d8e3478840a2242aa62305d"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/football.png",
+      "sha256": "d73ec28196f85647b42a6e674975a7300c03dcb54fe0fbe19e897266a815c161"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/forest.png",
+      "sha256": "9391eb91d9a084cf7068880e4b174312b608142855ccf63ad4f45752c42ed726"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/four-leaf-clover.png",
+      "sha256": "292347918b4c06e37a92d46b00ed6fcf8a8fdf721617d976d0cb59304076facd"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/four-oclock.png",
+      "sha256": "88713004d0bed72f43d8e55e2d9fff60706cfab8c73c2177ecaa0cf7cbe16821"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/fox.png",
+      "sha256": "28f73232958447f0b4f454c7d4407d88831c0210325f0ab7245793c50a3d61a2"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/fox-face.png",
+      "sha256": "5d76b2012ba80dc5b900727d673e7721a0fb8dcd109c832b1086446a1a7cfb29"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/fried-egg.png",
+      "sha256": "e20b0e9567fe779efd3adbe52f0ca92e121fbddec89d16d23596ca217d178a29"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/frog.png",
+      "sha256": "f243d2e9126cde0668aabc763d76d30ca5d7c6aa8093ac5ae4a1dbffa9675b60"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/frog-eggs.png",
+      "sha256": "fd8c85c69e86841c6568fedb6223a34d0b7fcfec04e8db81ec5b82d0aa1f85b7"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/frog-face.png",
+      "sha256": "679e942fac3900f80553b906ee3794e35f5c95b29104205f17f86f77c6fc95af"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/frowning.png",
+      "sha256": "f288d39839629ab1231ce06ab05436a8f6d891eea0a10a1401bccbf71fd4e232"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/full-moon.png",
+      "sha256": "2fdad1c545e4a9d97f620259fe1d9a9aaff2e3ed241cf59e268675520506b6e5"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/garlic.png",
+      "sha256": "b4445eb12e9d371f59e3de9558cf1ea83d0c5e932c318da30bf8652035e06777"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/gear.png",
+      "sha256": "184cf409a9ae9c0ead50f4b00ea56f741a021f79f941220c0419872d2f089810"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/gem.png",
+      "sha256": "e4e3c1cd7ad47b3b5175b2b5b08661a3c5dfcb2c96d931b3916f8e4e833f6670"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/genie-1.png",
+      "sha256": "b7f24bf4a5949d2ab96d9d05fb1c4f71eba7a830406fbec64bb09edbf9db8364"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/genie-2.png",
+      "sha256": "2305c230ebc2be0a0a018d55450e1bdf92a4c0580a32485fc712fef94a4d81da"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/genie-3.png",
+      "sha256": "1879ba32c61ec59e1388ce082e83201549ba23b029402f8c47ab63900cb7d2c7"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/ghost.png",
+      "sha256": "4ca3e2a2a432e5c6937046f227812163826e1a7ad6f91bed5995ce240aaf20e4"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/giraffe.png",
+      "sha256": "61000a22fe94a7a59967689abeebf1473153e35b583b37e07814c4d7ca30106e"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/goat.png",
+      "sha256": "66b4daadd69d4952d4ee7567ff35795b24217d7ed999a6eb4d3a1bf7a9845262"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/gold-medal.png",
+      "sha256": "2c5986ee07488339fe0c1275010e22d8f01c6f37404b687748a11ca32a2d0225"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/golf.png",
+      "sha256": "5f0059b700252c24e0c7d8e51e62869429b9a7277042c4aa7ca15caf190f2df5"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/goose.png",
+      "sha256": "ea253472223d4f0a8b409ee7e0a3f794aa9fb4c7f420122a847102ecb6b0184d"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/gorilla.png",
+      "sha256": "2a3474a748c6c9dedfe7f2c5955164ded8282b2adfb2076ee5ed71d0d20de69e"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/grapes.png",
+      "sha256": "ecb80e5bada9058863cfe76325f269c9e93fc9aaa7edbd134d848cb61938eb25"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/grimacing.png",
+      "sha256": "fee853565b270dfd762e95c371812461b7a0aa9e3be165960ee082cb82856450"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/grinning.png",
+      "sha256": "7192e6a5e2bdd61ddb7f1f4920fc2c62957d23da9ab4552940d6202b83400abd"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/guitar.png",
+      "sha256": "34b06d5ee1860feac3a052e370945067cefccde7fa3fcd41abdf67fb25e081f3"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/hamburger.png",
+      "sha256": "c10742eaaaf84a3ca7299157e807c3057f3a3bcce7cd39787cc932054c33de21"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/hamster-face.png",
+      "sha256": "233a1c7be97a407933267ec31b7c1c4703e5b14e3fd49caa37bfc870ac0d34f1"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/hand.png",
+      "sha256": "5264d49ee12b029ba25865f5cfb9c387a79100a29369c4dfd91a57939db7a7da"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/hand-1.png",
+      "sha256": "82c170aade5f9231fb4a9730ed28d61e9bf73bb23e36232998ce336ec73d1bea"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/hand-2.png",
+      "sha256": "2b16ea634f3d9aac955bcc655b2c06beb2547a168d8c138ef78e85800bc634e0"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/hand-3.png",
+      "sha256": "9834054db8c5ed3431ffdbdf667d8eff994cfaeea9b48a732bc7edb07c2a5f71"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/hand-over-mouth.png",
+      "sha256": "a4eb1032455356d14ee4b4574f7f561d01621d96b046c4e1d6b56e09b49f75ae"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/handshake.png",
+      "sha256": "332f4997232e9e8b4bcf96ccafc561ff887c0c3e52719308fa5c8a43a1577aa6"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/handshake-1.png",
+      "sha256": "ebc4678d5888247d30156b106c1a6854099d6c84894e9dd6fb04db55a11f81fa"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/handshake-2.png",
+      "sha256": "a0cd1059620621ec709ecc44d8dd81c9e763e4a877f5c4fcbdde32583f9c4083"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/handshake-3.png",
+      "sha256": "441302a05fd0a39472d4425ab79ba3567baf93bcd2c53cdb2b13f08f906e806b"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/hatching-chick.png",
+      "sha256": "62349927a8e4839b25dbc24656f58a719bef095397e3b018ade1ca9abcdc9fc0"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/heart.png",
+      "sha256": "a9cd8a1d6da9f54c9bd5b8a91aa9b3721764eaad9a4265e2565e16603be4d3cc"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/heart-0.png",
+      "sha256": "dda864ca6d1ec73eda44de8bb8d9eb8c3e0e2db4dfb0746e8b9b8c859bb3d592"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/heart-1.png",
+      "sha256": "04719a08bef1a894fcaaf130b52cbb3d772f0a5b6e4a4f5b124c0cf1465e3f9c"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/heart-2.png",
+      "sha256": "912bff24cf232d1fce26d2837214caaa86b50e1afd1154aaa4f26f09a80fbdee"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/heart-3.png",
+      "sha256": "81bb68267258a76743403c575887cd2ea3c507bd93da061707a359a84254ef77"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/heart-eyes.png",
+      "sha256": "750b4e935a86a356404449434db4c12ccbd9953992a84e7b776eb9b0f097207f"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/hedgehog.png",
+      "sha256": "e541c97454172abdd32f58bfa2dba29dfb44507a2fe56a40bcd8c2487aed6abc"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/helicopter.png",
+      "sha256": "f247fb93473f1eb4d9ae8f3c83879bfee2f4b8e4dd7a180bb5854ede05c0990e"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/hibiscus.png",
+      "sha256": "e15967b0a041f422bab7dbc475f8ca09c7f6bdc235a7faa62f34a71153dc2c93"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/high-speed-train.png",
+      "sha256": "5297036572994c41075d2bed7e49cfe214f4d225b82956b570b0f3a851b523f2"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/hippopotamus.png",
+      "sha256": "0b5021ee2e1472707a88e73372b12d72f3a94bd52167fbc71453c5f43df7f912"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/honeybee.png",
+      "sha256": "f9d980cbdf3b713c2fdcfae6efecdb9cf7036ad25fcdb3f939f10606572dda0f"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/horse.png",
+      "sha256": "19b2e3b046c130122abc560553316fe55ac6709e61c687891345e5f8963032d1"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/horse-face.png",
+      "sha256": "6f3830f2991e257418aae0c44c9e4f112c62b43c0e565aea3960a52ae64a9dc2"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/hospital.png",
+      "sha256": "7bc5191732ddd218d6cd2d830e40c7352cbea60a94b66f4ff22ce7f3c23e99e0"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/hot.png",
+      "sha256": "d0e68a1336aec13906299400a6336200d5a4d21527f6c66584cf1acac8e99e2a"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/hotel.png",
+      "sha256": "0f8e06387f162389fcabc8fa37aff24431acc6428620d5c396ed8b09c22afdb1"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/hot-pepper.png",
+      "sha256": "43d8d9f7fce0bc20673b01f98668ca249e31686af7b5fdd98fb38b4937c4e634"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/house.png",
+      "sha256": "e9227c72796b7669c6d7a0e8b420e0f724dae55f8cf241d7f2ef36c9a53b5501"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/hugging.png",
+      "sha256": "baf75d3548cf7d12115c4ce0e9d7b0f8e66c1aca9ef6388f9df2b15705ad9650"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/humming-bird.png",
+      "sha256": "5e72b5407ea74a8ba14ece39325bcef58882c967e329ec71001c6c3d40c3f295"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/hundred-points.png",
+      "sha256": "ba43e669b7c231f4ab05d4afbf260feb73734cf110a29f2ad5ec16f2e4dffcc5"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/hyacinth.png",
+      "sha256": "5fadc7b4d6bfe007e168028080df8792302d9b679cb6d023ae1899ae84a6f168"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/ice-cream.png",
+      "sha256": "055716bcd921adddbe3285917dd38cd39e93f5015b21f7c61431eb4d9dd3f55b"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/ice-hockey.png",
+      "sha256": "bca1757a63518cff6ae47d5ef2b755e2aaf1f992eae652068199437d56048680"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/indi-bot.png",
+      "sha256": "75b9fdce7ec4487fee85e061007b0061f04e2bac869e001a30f487c6613ad447"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/injured.png",
+      "sha256": "26a6eecadc33db355cc59fcb058699136d58cc56e4a0467552c4f777ebdf81e1"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/island.png",
+      "sha256": "52ad18764b54457862776b1d5f75bc27d95266456e4c510cc887319aa42cc158"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/jack-o-lantern.png",
+      "sha256": "b8302b565e80018415d20ed28bb99cbca3f68269138bc6d8ee6d3b4fe2c187e4"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/jellyfish.png",
+      "sha256": "1c7460dfa7cd346dad6f6b2f0bad042fac73bffe1b0772356ee6ff9ab256250d"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/jupiter.png",
+      "sha256": "435173aa7dfa0b9c07896f75c56e100d36018465978baeb362daaa4e8974d81a"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/kangaroo.png",
+      "sha256": "5ea6da3a6acd463946ea076d3c8b4a93499dcb98d16cc72a9837757c2bff68d6"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/key.png",
+      "sha256": "90f8c4a86577cdfd607052a374b78bde6e4447109ac767adbe2f78971fb533b3"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/koala-face.png",
+      "sha256": "bad9186b4e9c2f4b8af4be068bcba34f9711b798a16c8e4ae7700e38d63a9417"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/lacrosse.png",
+      "sha256": "d049f624978e39cea66a9f20ad878f47038c4e8c0b2fe4df0bf2a8b2c6ad8184"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/ladder.png",
+      "sha256": "86dccc41d51a0f7bd3ecfff3e77bceb20256612b428156d9ed6cf50a5c03f261"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/lady-beetle.png",
+      "sha256": "1f69f6e956eebbb1451b8d445feb890721dfbf8767af22d3fc1651f43130a6ef"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/laptop-computer.png",
+      "sha256": "5f8e2418c6e09eb3ac7f5bed6a0653f669b33463d1e4cf5c1df798262786443c"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/last-quarter-moon.png",
+      "sha256": "7563f3035d850d1f95695869dde24be11c1bebc8eef743cb2226ef3a18369690"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/leaves.png",
+      "sha256": "c3a2c10a099d829132c203ec8cf347ed41761c8d26c27bc5f0223c9ff3d0965c"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/lemon.png",
+      "sha256": "53853fcd5fdafaec22777369b3902533f4b3632836f9815bfce03f989459cc65"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/leopard.png",
+      "sha256": "baffc5d0f3b1f3e38090d2e11213c9f843b727cb59ba5cd5c3658c72c1655016"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/lettuce.png",
+      "sha256": "eb4245e6cb9e065c1d15b19c15c6817dc5e894720c3ccdff8954789ac03d5a63"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/light-bulb.png",
+      "sha256": "f45254b3420925bfee8355d4876fb115cbbd7b5a86e7f418056754c379670c99"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/lightning-bolt.png",
+      "sha256": "70fdeb2104dceb79fe387fd3f460beb95e45b56d962f339c9f637824a914e7ea"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/lion.png",
+      "sha256": "21fcd7eda25e6aa8936f1507e8104b3374b23498fefd4685c7abbb7314302b54"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/lion-face.png",
+      "sha256": "900ee65e87a96e413580aa1a911ae9e54ed70fac9e5cf6e31796103448198cb9"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/lizard.png",
+      "sha256": "4b92c4b3c12f3e67517a4e5a282cf16f629e6c74115e5549b6fc627bcf3ff110"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/llama.png",
+      "sha256": "8054fb7855107e8d20889e93039c0954edff8eb81d4d3b2e7d674714e58fa669"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/loading-bar0.png",
+      "sha256": "915f82a8ec2cb6a4449ac2f01e086e1071445efe193c51c321ca9c71b9fee598"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/loading-bar1.png",
+      "sha256": "eefa81e4789f0f97c69c23084ae6cbafb85ccdd56e803719df8774971eabd7ba"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/loading-bar2.png",
+      "sha256": "ec893ee7f4f972ad8a4ae4d171e7a9d9e743e79664764576ece6b6bbe6d78b06"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/loading-bar3.png",
+      "sha256": "63fa30c6e5d86fae99555b05c7427e8e1be499805e66f72d0d886747d9f3b3ce"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/lobster.png",
+      "sha256": "9f800042e5bdc08e769df61cdb3b005a7741ce06574b893014c6fe48c1e30401"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/locked-padlock.png",
+      "sha256": "544f3a53fb77480b1ee593b87b3cf32f14724df4c56c6da34b53fe7677f53a71"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/log.png",
+      "sha256": "43ecd48aebc10aefad5c25cb8ff09820443d1078cb0e184c1aac226eb53bd490"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/lollipop.png",
+      "sha256": "974d1c92e3c0f8901a278c8854c7d17c78c24701647316ce9235a9ec45b5c860"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/loop.png",
+      "sha256": "f0a2df246f92fc64ad138dce0dc99a195e046fe6fc7fbf5220158ae9e7249d8d"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/loop-once.png",
+      "sha256": "35da875a0d2301cdc1d51245260cceafc6df3627f07a1ba3b619690745c66d19"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/lotus.png",
+      "sha256": "d9c49a5611dde7de41d49a9283f4e79a1b3a728c396b0afc3162d4981ddddf2a"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/loudly-crying.png",
+      "sha256": "e94bfdbfa8493a1f2737ba933eccb358d4315ed28ffda24ed2cf498a905512ec"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/mage-1-a.png",
+      "sha256": "47958d047ba76f7f740ac245196afa7710d490947793292051090f230a177613"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/mage-1-b.png",
+      "sha256": "276e4ff7850b7c73d7a765c38c70074b3d3a7ba55a3f15128eba30fbb437ce1a"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/mage-1-c.png",
+      "sha256": "c8919f49b13036b9f1b63d9838e97211cdd97adc1595fafc0fc04b435a8bd103"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/mage-1-d.png",
+      "sha256": "1610413ab70b7cc17f8356fffb083cb7a9cbc1ef791bdd725f4af4cf4af604d4"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/mage-2-a.png",
+      "sha256": "40dcba443a233b816ff971be2984ae0f64d2dc03ffc1e5529cbe1d7c79f06e3f"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/mage-2-b.png",
+      "sha256": "8d0bf1fc54e4695ee9941ee6669cec38ead6bb63c29cf2b4ac8ba0d878e5d6c0"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/mage-2-c.png",
+      "sha256": "68ba4ca5d63059face785b418cffde95bd8aecf6c5029f2c77c308efb759bea1"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/mage-2-d.png",
+      "sha256": "8ce11699e77594043eeeae219e7d20bc6839c982155ddb56585d75b8a6f8cef6"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/mage-3-a.png",
+      "sha256": "6cb13bee84cd1c8f5e709a5e106c7a763241aff19ff0912fc2464d865d06d482"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/mage-3-b.png",
+      "sha256": "407e71c14d13726eb27d3ce4c4034a1d2526f4ca8d083e030c6e38ff12f62e4d"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/mage-3-c.png",
+      "sha256": "f01cf6f81ac0728ee97b70d374b02f5b2ba18af54294a58353bdcb79e6cc5e9a"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/mage-3-d.png",
+      "sha256": "1b7107c596ffb40b04009ab6a7ea503a051b15744fdc5939b736c9371efa873e"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/magnet.png",
+      "sha256": "8e0a3217bd4e0d10d3087ad2773bef22271d07d1db12ceb7471ec8f7f36bf746"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/magnifying-glass.png",
+      "sha256": "28f9abe143cccb7bbff503308885a6dcc1c37752e79da7ae7162531b63bd8d47"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/mailbox.png",
+      "sha256": "a6abc5e39f8e5d3e595e41053ba60aeb32ee422095d30da76af6c19bdcb0c45f"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/mammoth.png",
+      "sha256": "f3fe9eaabf51126d3729edd0599b511b617c0284a9901c1106e8cf1567a251ee"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/mango.png",
+      "sha256": "6fd5b496d5fddfa5398eb6da07c9561d36b37ff69fbbcc4600e238222e766f82"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/mangrove-tree.png",
+      "sha256": "a67206b4134c4c0f5e745b199d96d4b2256de703be0a1402a255d1be6ad4722e"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/maple-leaf.png",
+      "sha256": "54e2ae6b3ae4e5579abef91c73cde76ef1a52b05c3dc610eb96f81d580ceca28"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/mars.png",
+      "sha256": "843ab5c9d366074ed2da0b1ea2f81e610b9ae9001feb5c97be47a11bb87a7c50"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/martial-arts.png",
+      "sha256": "9d2b2d944fbafee6c581690107546e4c3341e3ae9666646ffc81d629a59d58b5"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/mature-soybean-plant.png",
+      "sha256": "a88ac7259f922f44fe3277b574b28800cb3fb8c179d9e437d42eda76f3597d3f"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/mature-tomato-plant.png",
+      "sha256": "4cb178feba9d11de555fd85dbe3090df2b69b350c1d0a9b728ccf2d631976d1a"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/medical-mask.png",
+      "sha256": "702218bc4f6656790661f9b12e60b554ba873be65989324bc908ba500f1c15dd"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/melon.png",
+      "sha256": "28423565e2df6f53d01374847fe42f03e8f62193e790a221e0ebf2c085e10b45"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/mercury.png",
+      "sha256": "0426bd98d56e2d193bca061ff56d0c4e7626cca7baf2af76d62c2e13418cee63"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/microphone.png",
+      "sha256": "3d4f86389bacc81a22725dd2358dc43daeaf9dc437e3c0f3990fa75b2a701300"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/milk.png",
+      "sha256": "e8f9810d0ad233ba38fe7f3e64c038e60c52617f6b5a8b510ec99b9d1d015cbf"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/minus-sign.png",
+      "sha256": "ce107451cb392cc5fcb5dc845a2e1f50debd577b8433e78c2a7e5c95de51123d"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/mobile-phone.png",
+      "sha256": "0f309b1988073b740209cf11756e03c852c8b18fa4ad6767cc2d888f7dec8290"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/money-bag.png",
+      "sha256": "3e9fb96aca49956e4543c8b29ba8961fc161d074ffd4bd69f008aa059ab0bf8a"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/monkey.png",
+      "sha256": "fcabdb78668ab60e1c3e6db550ba699e2a67cc92ba3cdbb4343e9bdaef81d284"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/monkey-face.png",
+      "sha256": "381aefa9de12b1849905fab6dd40cee7cc1fba6b8c189ad502f3f5019fa042c8"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/monocle.png",
+      "sha256": "14d3dddb1f007432c9aeeb52d84905c6dc8388448e0906a4bfc8fb38593e0ff4"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/moose-face.png",
+      "sha256": "4c265519ab02f86cb7acf5fac86cec3fdaaa119d5493eb5d8ecc983d21a46371"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/mosquito.png",
+      "sha256": "7ae3445ccb2e7be38a2983631b28f00f77902704022bb2eb94970924f5a1a3ac"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/motor-boat.png",
+      "sha256": "d4520ee3c069509d207c7d57e207dcdaeaa698c3baa1fa6e6009841cea6e96e6"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/motorcycle.png",
+      "sha256": "ab338499524ea41a944eac1610893c59aafdbc929429f271019861543dfccad1"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/motorized-wheelchair.png",
+      "sha256": "11dd595325faa7e63b0d6bf99aa24325dbb4986c9beab9637d63aa8ee8c4cbb8"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/motor-scooter.png",
+      "sha256": "c5ad8ee3e23c3757cf089dfc8200a419a6d56a4d228f6990f7091ed511ad8011"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/mountain-cableway.png",
+      "sha256": "bba2440d2201974712f5133d706e41aaf9e4a897b96afc6264efef6be8211509"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/mountains.png",
+      "sha256": "a169a51e81d45f3088829aee22679ab2561de3e5941d88d7dffbdb5a0f487075"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/mouse.png",
+      "sha256": "5198a5a813ec444a4388611b72b66a87cdc6f8ade585ce1dfdbb0a9cd80ff540"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/mouse-face.png",
+      "sha256": "51c2a9916eb62bd700eeb1c8858698e66edf3fd4ab671a81f38d0d1edf0c83a6"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/multiplication-sign.png",
+      "sha256": "7d755d82a5e68aa1eaa3f24a0453e2842fd95dba694f42023f78f42e64e55e45"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/muscle-arm.png",
+      "sha256": "b9e96cb80da3e75a66c7df2ff9d39b1e3b7e18b71ecb1486ad91932938ebde60"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/muscle-arm-1.png",
+      "sha256": "ce2b557ecba6dec1053e5167f2961a99c64ead9d7aa4f95c5eb4db8a2153a601"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/muscle-arm-2.png",
+      "sha256": "c3b6f2d0415c608c8fa453438ed7e98b77172603af95b9f2b984d7b11018e846"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/muscle-arm-3.png",
+      "sha256": "0ffcdc8a810c2346559827068655f80b3fa346904cf54dda6fe95aeda974b229"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/mushroom.png",
+      "sha256": "453bd5b2d168120be3ec78a4fe0721822f2ca00373815aa555ad64c1f8bf10df"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/music-note.png",
+      "sha256": "0cc85eb0e03950904292797f359de3ef325219397ae6b1c1ff5f41667936c6f7"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/nauseated.png",
+      "sha256": "94c431424351ddab47e50f7a1e5c7ebcb6c8795b875aded825d110ce0c31fb31"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/neighborhood.png",
+      "sha256": "0acd79eb37177640d282f1e1a123e50394b69d59ecb73812ecdf2810d0d571fd"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/neptune.png",
+      "sha256": "8f63e0d97a105b35f245ddb3bc321851bfd70f6ff206c36e72ba3ef9f536b8c3"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/nest.png",
+      "sha256": "94407a7c22cc6eab51d0fb749194b00e73cae4822e409f3bb0b6dc9efd1d6aa4"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/nest-with-eggs.png",
+      "sha256": "dddaf12b9cd1e3078ead1352440278be8d6339e7482732566022b2a7d605b1e1"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/new-moon.png",
+      "sha256": "30968310258ae742534878504da166ed39a72ce955e3f1bb6b9fb1f18d223e1c"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/next-icon.png",
+      "sha256": "cccd87b70462438748ce613273fa1214548abf5d0b3b037f4f2e6c10be398da0"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/nine-oclock.png",
+      "sha256": "4aca59cb4836096cffff48cdeb981fc5d1f2c6509e30614e259640d6dc633966"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/no-entry.png",
+      "sha256": "cd5f178ee147d53273eed8eb8d3dfdc46fb33a2a904c79ba1e028e7a9ee4961a"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/number-0.png",
+      "sha256": "931fe94865959db049e07f60befefdc5d915e9cb4cf2152149414fc7c1fbd835"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/number-1.png",
+      "sha256": "a4c044f02477145af6fda69e87ca3f8533a6df1fed28161ec9a6a52ef2136d88"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/number-10.png",
+      "sha256": "dadaa3ec9741985f2b71e3a97c454970c89f140fa3fb5408a5282bbb69cf2820"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/number-2.png",
+      "sha256": "6ad1d75b07ff9b502657d05d643f3959656ee9ae95dd252688ffd49c0e04131b"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/number-3.png",
+      "sha256": "3250da9f395b62222148c81ecc3202d5b947f80eb857cd3d42e843732506ce13"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/number-4.png",
+      "sha256": "731c5aee3dcf64b09cb41881a28a8e90d5cb02f87c039aa665a7bb433ae097c1"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/number-5.png",
+      "sha256": "72585c3360ecf57eb28a4efd122f9731915e5965444066e8b1b1bb53070fc99e"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/number-6.png",
+      "sha256": "559685a23878c4860ff4ee9ff1bc9f4a2345e28bc0e08b016b78004b8c30c00c"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/number-7.png",
+      "sha256": "6be9356b7008f1b1f3f04eb8dfc485e4068a030f4bc00d23a34884059afa90f3"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/number-8.png",
+      "sha256": "06e731e33cd439077acffe7b096031dd431455f7db8ebd4b90e67c8621e2a8aa"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/number-9.png",
+      "sha256": "53bdb5c9ddad7418ee215c64a32fcb4e67c523abb6061f276a10f29b1f55ac1d"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/nut-and-bolt.png",
+      "sha256": "fff28f1a903513ec959e1c32bce4b4899f365e6c6d30cc586e4e57c98ae09904"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/ocean.png",
+      "sha256": "e67266601b00f2ba35825cc5ce78b08ee13af78286db0a133aabad9fe2ad7231"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/octopus.png",
+      "sha256": "01c9e8d32a0edbc7d6e3990b1ba95a2986f0c263a89fccffc0320c1408aebb7f"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/one-oclock.png",
+      "sha256": "08c8c7023017546d05508b6234ba758ec5248439b353284df9b71ab61a19431a"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/onion.png",
+      "sha256": "10d14ba1cd359c068874aa2dd2222198296ed5ef685f69d15dd9c66b17051c66"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/orange.png",
+      "sha256": "c7c2b5f5fb746cfb466997e1fe7561fad11015d8976ab726c5f0c32d9363c5a5"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/orangutan.png",
+      "sha256": "23f831fa04b56f72fcf98fe0aac805907874c5068adcc9e2b83d870e91800291"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/ostrich.png",
+      "sha256": "546cd53b3d6142f0e975a0752b2fdd62f2171044b0bbcc0487c35f3b7389a130"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/otter.png",
+      "sha256": "4cb23563ff16c978220674d35d29111eeedbc8e0d60ca9cf3776ad0047744fcf"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/owl.png",
+      "sha256": "a89f84465c59d529c0f328c52caf570710865d26d2500e61b652cc85ac9c0c7d"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/ox.png",
+      "sha256": "57a31b1789255d8893ba853f11f580015a9b8cdfe95bfe0e3febeba6130de148"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/package.png",
+      "sha256": "a18efc49b75e738c7dc580010c05815f5a1d63566484a9f33b14256b0294e598"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/palm-tree.png",
+      "sha256": "698b5cf4f221c3aaf6a391b56fcb923035ac6e914b4edd42803a1a06d7de352b"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/pancakes.png",
+      "sha256": "de459969babc2b587795fe3f1ba2bb9e72fd6f3bb9269ccd015c1f1342c080c0"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/panda.png",
+      "sha256": "64bda073092166beae0f912a29ebc5dfe70ae7f577c938d357a74ee7f57352bc"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/panda-face.png",
+      "sha256": "ee1fec9ba9f466bb605969627e84d93383a7542a0ba69166561e81144826e191"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/paperclip.png",
+      "sha256": "3a7f0a0e2f332848c335667b2261154b25e994eda224139c92f6562400515aea"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/paper-hand.png",
+      "sha256": "787a2de2b1f015935becf65ac00225c615bd00424ccd34624f126cfaecaac3e9"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/paper-hand-1.png",
+      "sha256": "cc123ddbb58bd2cac13240480023e2d3e78322e692ff9989a33f692116f17b63"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/paper-hand-2.png",
+      "sha256": "c3052050978704a8da64f20e21d22f588f8bbaae2b9224bfd12f9d861b0e514f"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/paper-hand-3.png",
+      "sha256": "b03a0ea708d72b730867285ef5a43e0fc8be47c0165d1755e0b11dc12ccacceb"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/park.png",
+      "sha256": "d14823682f7a2dbf700a19f9d4d2cfa3348bf0f7756d1e68fb1fe39619b86a9d"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/parrot.png",
+      "sha256": "54d23184ec147c5e15b994b19207c578090f0a8518a77caa76949d012e3e3168"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/partying.png",
+      "sha256": "6ea81867be490d961c30bb179e6b8158146a31d282b317b89b20f5374cfd24ab"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/party-popper.png",
+      "sha256": "0ad8dda1f2467072c753c6a1e5b16603747e76d0aacd7a29bc4bb0da6e5ccdc8"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/passenger-ship.png",
+      "sha256": "8b70d7f2ae7080ce6aed94d50a80b1de051dfb3cb4ddd798dae2dd8975487c4d"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/pasta.png",
+      "sha256": "f1d87f5674e6c1f9d4fee2c66db200146833a93791bcf17649447f95456be079"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/pause.png",
+      "sha256": "2da124ffc0d3ab0fa79129a981c1f46b4494cdceee4c4599ab34c164e07967d0"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/paw-prints.png",
+      "sha256": "5c28785a90c5f716098c1050e53f8a89b122ed3c4069af8ff1baf0cc0ff25cf7"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/peacock.png",
+      "sha256": "07597b977d05e791979b89a7a2a9a881d96dc35b77e7e4be99669b14c72e0bd7"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/peanuts.png",
+      "sha256": "9bf9b790018e8b1f62501f50bb7de01f17ce14a6aef88f6b0e1f71cfb601a1c0"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/pear.png",
+      "sha256": "46e295ef28709810f61cfbc95809adb6eab020575f8ca63cb0fdbc1d0f0107a6"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/pen.png",
+      "sha256": "3458db0851e4ad059f4bbf6911132cf7b23de52fe27e05ee0b215d2fcec823d5"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/pencil.png",
+      "sha256": "4fe75fdf598707410b11e96b588987ac94ba31607a7a2daabcd7b90c31a64d60"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/penguin.png",
+      "sha256": "8a2efd7546359c2562d4a9cf9522a89035beb1e97de4c8cb7b3c8cca4dab4a27"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/performing-arts.png",
+      "sha256": "b9f616d63a4a9d957ee8491511ad85a51f9fc7f47ace1ac19c3cd1a0670a7e88"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/piano-keys.png",
+      "sha256": "3dc44f29a60693c5fa0d55ed11e20e0d46f0ca0acd36e821820a96b6d8ee2147"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/pickup-truck.png",
+      "sha256": "ff9a1a43bd47dbe4e0af2ef00489d8f2d50c10d2621a00b2111f28635444fa16"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/pie.png",
+      "sha256": "7610ee2a3141f820cc1e69d7e3a2992ba1dc983da6f13630960ad25c39b17c76"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/pin.png",
+      "sha256": "26a0f377efac567b44324a6f03b2e112427e8615b4f574ec4f638ddca9c2ffeb"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/pinata.png",
+      "sha256": "5415106b5e195d33ef5a8eb8f50b5fa182484a7a6695285f8aa5ff27498958c4"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/pineapple.png",
+      "sha256": "700bd5984215fe33e038a83ba44b0a87a787003bef02503268ae63073f9f8259"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/ping-pong.png",
+      "sha256": "bd0a6bbbcb207e06f37c91b76a57485ac351643c9d67d46e6fa99a3fa8b59f86"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/pizza.png",
+      "sha256": "28a9ec074e7aafcd0a23ab7f9764c3513ae4a69d7bc816d6822fdc7737fcff15"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/play.png",
+      "sha256": "80af9483d563a1084619f02d262e2cb6402105cdda86778ce675fa2c6b34faa6"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/playground.png",
+      "sha256": "bb357dea1a796323b26b30ee8f40ea4b1dd6b74145241165ce450eb80cce6546"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/play-or-pause.png",
+      "sha256": "e7425a8df1501593ff64575a95c781e4d3e787d1ce41c2614004c6176da76b8f"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/pleading.png",
+      "sha256": "034087bd64b704410ea9716ae48ae52a605bb6896e5715f6d7756f707e43feb3"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/plus-sign.png",
+      "sha256": "2fe2341933007b595a2bfb4acea6663b5744e91ffcb99d38571eea1f34cac522"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/pluto.png",
+      "sha256": "d813ef66dbc1769e47b1af1301643b8f6377e0e59ef40fe0d6d7a5c106379e86"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/pointing-finger.png",
+      "sha256": "d5aafec4cabc7e8d960162f5ae48d0f5a32ee11aff4c39622ccafac2b9eaec24"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/pointing-finger-1.png",
+      "sha256": "df30e86175b1bf4d6212d388e9169228601deb5800634a661f68b70508d6810a"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/pointing-finger-2.png",
+      "sha256": "3a18e61d4c72877e07de28ee8759d14733eb7108c673bc230a268777c240f2d3"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/pointing-finger-3.png",
+      "sha256": "e891b54ad4c916303e7a7e3679bdc7b0d9a880dfeb0b5f0350799371cf20bd0c"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/polar-bear.png",
+      "sha256": "5ccd92ae07eff2c7240703e3b7e303f048d44c2c28e2000941bab3518b4c1d97"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/polar-bear-face.png",
+      "sha256": "0263d864a536fc9c4f1044c17ab18bfbbf34b5a546a8ab432d85083b1eea09ac"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/poodle.png",
+      "sha256": "02cbbc53183411867b979098b828dde7098b2fb2c6928a97c5b3185e63b6b4bd"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/popcorn.png",
+      "sha256": "f7e779b753fdcad3e3638f8c44dd375399fbd0af51ee014e5111d78dab008fa5"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/potato.png",
+      "sha256": "b71451825bc62938326e87d773765b4e64dcf211b1775ee01833f03a6dd1ac4a"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/poultry-leg.png",
+      "sha256": "7d8fbbd4ea7722b3b45c0602e36f6283f2c38f26a818247ba9b9814a290524fd"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/pretzel.png",
+      "sha256": "1cecf837ca4fc9a3bc7a2dd968d573e8ad2d4a9df62178d46b3555449f2e6929"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/probing-cane.png",
+      "sha256": "46b86766eb90172070a34bb00038a2a7a60317986960126df414019ceecbea4d"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/prohibited.png",
+      "sha256": "580cc5763df0c54e0fb5e5347c5681c4c6ecbd3fa6128caf06c1a667f19b221c"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/rabbit.png",
+      "sha256": "bdf49a067ecde29aa718da93e927b55aa44ac469726657dd50be385220f49af7"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/rabbit-face.png",
+      "sha256": "e71d971d9128e3ba543f53621872322fa353af0a69a3c824eadaccfdd5ecd9a1"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/raccoon.png",
+      "sha256": "3b78c163a01f310e1b1eb2b867f70921b98118f0fcda2e6cfb6f3d94b3699abc"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/raccoon-face.png",
+      "sha256": "456417cb3ebfbc5de4525393bab4d4753f084555ab53c982b38a4d598d864590"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/racing-car.png",
+      "sha256": "16e0ec43087ae461beec9c0e26a5df1315cbb1be61cbc2b99e5a9155561a491e"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/radioactive.png",
+      "sha256": "d30a6cd574265f392f0bb231872b01f56d2bf29f83404250d028dc95cb28f567"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/rainbow.png",
+      "sha256": "34840a2e31170579de2f2ddf29af818d81e5d2f6b74a99a01ecd2df6a0774974"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/rain-drop.png",
+      "sha256": "ad246355aff504454cfd42b07e8fda5ff807be50188f2fa9e5ad72b7dfcfca42"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/raised-eyebrow.png",
+      "sha256": "6a58ca5de274d91f51614cf31f7e681640cc837715e536b9f8d9e5140d50fcf3"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/raising-hands.png",
+      "sha256": "5adbe564c457fd9a52e2ed25d1f9522ffb58ebc3fbc6e428026239e900ecccc3"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/raising-hands-1.png",
+      "sha256": "7ff76f5b744dbe5a37c6cd7850a3d80e82713721e99de84be963399a5a043403"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/raising-hands-2.png",
+      "sha256": "9e0b2aa434285243529eedc014eb55c916d2930de41b5166ef5f618e18cf37be"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/raising-hands-3.png",
+      "sha256": "00497809e690fa36423a967005aeb14112ba1a2744c94abeb31d4a66fabe647b"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/ram.png",
+      "sha256": "4f37da3d1a252bda6eed3f9a01cb19d583739a1747b8005147805e1d127f34f7"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/ramen.png",
+      "sha256": "cfd8b9d6b9c66c9e6565b8d7feb1dbfd23e3ebcba085fa1178aa534eb0715233"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/soccer-ball.png",
+      "sha256": "446ca54a658b74aed010aad043171f12dac533e155bdbfd14d91294f42c03e91"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/cat-face.png",
+      "sha256": "77ab874efc239bc9fd9b578777dbdd13e6e39399fceefe5cc4846ca7965e7a12"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/cat.png",
+      "sha256": "36f9429a87eb8813006305b0f1c2abc64f45c7cfe557eebac3a39beb91664dfe"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/slightly-smiling.png",
+      "sha256": "c93d259b0918d0f019250983d9bcdc6a1b8ed1323524fc4aba3e7b88afc9dd3c"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/unicorn-face.png",
+      "sha256": "2ae71700d153d48ec9404895d870880320b7bb496708bb2de550fc5a3a84849e"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/apple.png",
+      "sha256": "c3b24cc286592d2a53faebf6fdc2754dba413b81a7f56ce22d3b6a6fd8ebbfbc"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/thumbs-up.png",
+      "sha256": "f25589016dcb1b6d49d1945acfdd0595285c13facab1c3b2b434780eb5d5f474"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/chicken-egg.png",
+      "sha256": "f55b57fdd0fee9292ec80aa0de1eb3fe2dc999744b92a7b2d3f7bcc71cb9d42c"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/deciduous-tree.png",
+      "sha256": "2c8d0003992023c53dbcd1ec223507f79a057043426d8d48ee90518a0ccc7494"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/trophy.png",
+      "sha256": "ccc374ed6de3f002bdc865e9d822b6aad64cd611d6081d8da386ed202f36a34d"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/arctic.png",
+      "sha256": "ff126987f1cb69f36b19ddbcd24fa3eaa5ca43a2691606e663538edd00316fcb"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/sun.png",
+      "sha256": "500288340d94803f79f72f74add92dabad27e75fda0d0f581336d0499762501e"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/coin-heads.png",
+      "sha256": "d3f2190d2c11af3946c184cde675c1694dac3b469e0eb558dc7280669f5c7a15"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/airplane.png",
+      "sha256": "b651f79834bb333f2f82f5189c54611f0dd8222cab33be6039da61bbe9507aaf"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/rat.png",
+      "sha256": "72de967b1e872489744cfa53a87aa49c7982de296380fcd1d35e8570215cc928"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/record.png",
+      "sha256": "bd6273094601b69b4cff1587f98218ffaa481f190eefa31658bde72c1d94064c"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/recycling-symbol.png",
+      "sha256": "f5f87df688079517f78f99afb082340bb3373ca7fd6c63b3a2ff4b9f6001f6f4"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/relieved.png",
+      "sha256": "8c0e37de573dd67248d1265e45ceb72f56f11c9af9e7687f8b4bdd80aad08a94"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/restart.png",
+      "sha256": "a03f822fc98f4266571c3ed96e68cd6794ec48b436db74ac1cac12717fb99bfa"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/restaurant.png",
+      "sha256": "dcd5d48930e3682e240c74f5da7bcc64081e91b1e92849cd816eed9878135145"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/rhinoceros.png",
+      "sha256": "40bed8cb04daee8fa0d9e0fc79416a93482ab456a64ae8b79351fb82b9c4f3e7"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/rice.png",
+      "sha256": "2e509bcec8450275b757b7358d4085ceae46eff7abd79e5b2d6953e3075c86bb"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/river.png",
+      "sha256": "57059b8d91539d737db05a391c7ef4b1b7c5d61c5a2d7ed870d8e9fc9fe10ac5"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/robot.png",
+      "sha256": "02dda971a93533f5d894657f708da9ba80cc89797e0fb0c907188a89b535e7b9"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/rock.png",
+      "sha256": "8ea49c2b96eab181c5193be9c84204f0b740eda6f941978b2cd63ef3e11216a7"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/rocket-ship.png",
+      "sha256": "9c6223f4b2ae9641bb43288d564470104bef710a24b59530a436c99f1ccab6f5"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/rock-hand.png",
+      "sha256": "38a96bc053309ea68d0a1f1411e199f1736e049ee1422a8918c8892774e57436"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/rock-hand-1.png",
+      "sha256": "cca51f608192f0d190b22a0a194101bc44f858292b6bdf2255753130aaddf7fb"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/rock-hand-2.png",
+      "sha256": "120d8429567cc0f4a70e3e3e8eb12af8f624414f22807a98015c535fba04c9c5"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/rock-hand-3.png",
+      "sha256": "9a34913a3edb68f486da17ab5ba0c10f710c77024333e8c7edb6ede7c8810965"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/rolling-eyes.png",
+      "sha256": "ccec70b6b6011ad350e88c130d442aaf8b9ec1eb4561c8640ee6114918907b26"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/rooster.png",
+      "sha256": "d447eee1e119aa0d9495d68249ef6b2b9564236c8000846b18323c1207bf4363"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/rose.png",
+      "sha256": "82fd6f01350fa46294d79b48093270fc7244fa4b1131eda0c6116c6c57792dde"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/rotfl.png",
+      "sha256": "57243bb47d18cbb604cdf4490eb3806aac31b4d77b8271cb0ad1299be96c33a9"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/rugby-football.png",
+      "sha256": "d6d26d0a1f833d5efac8e2c884d8177b8a0afc9e8a5e1f1665dfc2175ee98b07"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/rvr-bot.png",
+      "sha256": "42f0237b22793002f817c98fdde9c15f4cae7268dd78bd196f6dc2b51cda663b"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sad.png",
+      "sha256": "dd13be0e041e8a6a49d2b2c7f0ddc516bd3ea985dc3e9eb754839494bf04c9f9"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/sailboat.png",
+      "sha256": "9001bfe602809ee7eed0506c5cabfbc781b4da822ca1953f963cbeb65834d506"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/salad.png",
+      "sha256": "c6044771a27dcb8162dfd661e7e3d3a8f23e428de145f7cde11984c722b769f1"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/sandwich.png",
+      "sha256": "dd914ee1e745de2bc5630cdea23516458c599cd3cfc7d849db2a48d48ae0362b"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/saturn.png",
+      "sha256": "bf121da96ac37a271c97b3cc5d7787baae2a2ad26236c61ac85e40c4dde796e9"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/savanna.png",
+      "sha256": "072ea2a664b44958486f35968b0836d082ed99b5457be20a817fb5ae6b97d0d9"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/saw.png",
+      "sha256": "48e691e1431844e1c18d06f4dd68977b06a3b39a1c31f7c81a81357c72d9795f"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/school.png",
+      "sha256": "9db75ed8bee41249f3f397236581ee69e82dc2723abeab1df2fcbe1981fe03fd"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/scissors.png",
+      "sha256": "a5ac387c091ebe8363ca14ad2a96fec04785e776d5ceed3f262d0940c5622926"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/scissors-hand.png",
+      "sha256": "f816560aeda04496e32b6365f6d32919c1c08715658e1210b10fb269133c5312"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/scissors-hand-1.png",
+      "sha256": "30f9c5d30802dc243c537f973889c88e1c1dd7fb2a07de96306d3fa313657c9c"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/scissors-hand-2.png",
+      "sha256": "e7cd4c7d18f7bd50845f85347c60ba396a43b144ebf1dada0efc0672d16de82f"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/scissors-hand-3.png",
+      "sha256": "4eb93230b73921ab2eb709a8d59acd7a464b2adb36ca65666a58f93373c175c6"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/scooter.png",
+      "sha256": "4cae6b615c6903499a53ad6f437db9f7f3f6dd2572a1089dd745c441427819e3"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/scorpion.png",
+      "sha256": "18548346711c98b18f39f39b571a32d69b1255f0cfd78198bf8e4cce2b182183"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/screwdriver.png",
+      "sha256": "17fca0c55d4a264bcf9d497509686087889e144e76614ec7f4efe7017d6c1167"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/scroll.png",
+      "sha256": "d4bf1587dbaa9da76a34026ca7bd02aabce8302c163b4e5cd1649f43bab752ce"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/seal.png",
+      "sha256": "6663d87a5732959ae986edeae39d20289c6825655254305f3f186ee4e6cba8fa"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/seven-oclock.png",
+      "sha256": "956cdfd3117e7599976184c581bfeed61425a0bfdbf64c6704e0e92403ff1208"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/shark.png",
+      "sha256": "d15951a4453c61c80f7f8690c8625dda49091f83eac8e4626fb406b7acc5fa60"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/shaved-ice.png",
+      "sha256": "8a117974e12ec8010ab706eec9b83fac76d975461a78331a4415c3a74b5f3c49"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/sheep.png",
+      "sha256": "371590368ef3d96ddde8a6bf5fff9bb8149c7fa84022da56f6820d8b720a08f7"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/shell.png",
+      "sha256": "0076ab609fd1e931f43f6e7339252f30f7d8413695e07cd148db594e1e50b85e"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/shield.png",
+      "sha256": "3b7e23d49ab96b57efc1ad5118ab95fb8adeac65db138cb98c34a04988400084"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/shrimp.png",
+      "sha256": "403813824943ad0c2606e44b7d745ef6aa8cc538de00021951ca41245f577468"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/shrub.png",
+      "sha256": "2ec992ae826c75ed5362cc0182754eb9e6cd5e599e05525463d2e3d3e7efdd23"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/shuffle.png",
+      "sha256": "034e574f93fc15559ba33f35413ae13c090ae293e4e650ce542a1c37f8dd9cdc"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/shushing.png",
+      "sha256": "a2549bcbaa44e8f961c51f575a53c3247f77146a83228599a0fe66e8146c0faa"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/silver-medal.png",
+      "sha256": "8e28fa9389c1b11a0cbea7bef8c2484eb65ff8cbd36e1818f36a1070c37ece07"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/six-oclock.png",
+      "sha256": "bfb4d7d10e056fd9fdae5a02c27ec0eff8818085bc2fdcffbd23e5039b003ba5"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/skateboard.png",
+      "sha256": "6fc94c7cee875558c299df915dd8ce181ada23e6b9273ab491f4f9b6d575892c"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/skis.png",
+      "sha256": "50ab1903befd5a5aba4ef500c75ce31c3ba1cb9a8bc907ea3087c04725cc7bf0"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/skunk.png",
+      "sha256": "f58cfb5c924bb246e205fba80bc5e83aa0388f0b5b3b543e4b4d99429acee22d"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sleeping.png",
+      "sha256": "7cd08f49ef298746635d5ef7a4e1548c72d46179328f7655ea2fd4d6d83c395e"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/slightly-smiling.png",
+      "sha256": "c93d259b0918d0f019250983d9bcdc6a1b8ed1323524fc4aba3e7b88afc9dd3c"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/sloth.png",
+      "sha256": "0b4948e398cdaf862b1d04d2b8389485a699b59f87b93af577e4822bc31ee17f"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/small-airplane.png",
+      "sha256": "072ce379b91201b4cc2d05033670e7a2f9056e1c3251e3fed44c0627da722383"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/smiling.png",
+      "sha256": "422022f5a3f8da3c71f08e826f85da7b1b8fd083560005bb950c65aaf72e60e4"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/smiling-eyes.png",
+      "sha256": "2f17f7071afd30e7b51376ddce1996445884196599f9337331799d9def58d332"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/snail.png",
+      "sha256": "6efbcfa5f2c362d43016a5e9b2552277e27436ca77d804a39bea06ea5b4ea609"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/snake.png",
+      "sha256": "e6e7278560a32ff34f9c75d3331403b088f54b585c0bd192ac3b2b5413b611c2"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sneezing.png",
+      "sha256": "623ba3fcc2b067763f45fa9efc47a0406390db29ff38c9718450159b3e3e8cf0"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/snowflake.png",
+      "sha256": "58818efc5420868466fcf4d229c70576ccfb1e47840e6a871654fecb25b06d51"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/snowman.png",
+      "sha256": "d58153bf8aaa8d2ff8f3ccf61eb6de30d5028e7ee8c871d6531e81bd72c468b4"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/soccer-ball.png",
+      "sha256": "446ca54a658b74aed010aad043171f12dac533e155bdbfd14d91294f42c03e91"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/soda.png",
+      "sha256": "1043646d8ca86a5edafb2bda59cc1eb6edee7e8f7f025afaa284e6dd42bc37d7"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/sorghum.png",
+      "sha256": "ff23d827ef35e61985f62d5fc89f64058065070840a59f9a7ceaeca8357f0c55"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/soup.png",
+      "sha256": "55e83dc6bed115cc5997897d14463513dcc72b6d5ffeeee9222d78214479dd4e"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/soybean-flower.png",
+      "sha256": "2e1d49b84a844caf1dc9ba4e62e923b7a47f4d771c479db5b260bd8247aa1253"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/soybean-germination.png",
+      "sha256": "0a7a170fb9d3abb57dee680efe354c82c1a72a46127131a837805a5b22f1f827"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/soybean-seeds.png",
+      "sha256": "e1b609e0c1a0cb16c67a0282748a6129ca5cc158d2026dca667882b1ac19f9c9"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/sparkles-icon.png",
+      "sha256": "493f026d5ef4abb54dfc786a66578af6cf6a2746d6abd3f73b14cf442c8797e6"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/speaker-high-volume.png",
+      "sha256": "8f2a4780276502537934dcc012baaab5b791fad870a912d9fe761d9e09a41bcc"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/speaker-low-volume.png",
+      "sha256": "0883bde57b511b19b5559af92c3ee48928617df043e69290e71cb3bf3300cdc5"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/speaker-medium-volume.png",
+      "sha256": "afd805a0880c3cf589ac8e9c883e122331c99009e76a680e9a2196597cd5bd3f"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/speech-balloon.png",
+      "sha256": "d09b4d8c516571a9fd424dd50a04417940fcfcc18ceceec47c8eff835786b3ca"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/speedboat.png",
+      "sha256": "097098942d673fc5ca5083e62db10335232b4a318d008a3fe4b877006b95d594"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sphero.png",
+      "sha256": "3e17339fbfcee69d614dd5f313e0762bb448a5134142e9d8db12aeb2c6dce081"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sphero-angry.png",
+      "sha256": "3965f65e5b0ad837984ca10e6a22760409eefe74a8f15ef619bb0d8886d6e5a6"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sphero-bored.png",
+      "sha256": "ff398cbde5c0b15d5395dfbfa546c49dd1574bffb121fb7c794b169f30830fa9"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sphero-bright-idea.png",
+      "sha256": "64a689c7ac95c78d4c58fbe9fc8c075304ae094dc2990024c13fe6ba65708189"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sphero-laughing.png",
+      "sha256": "d6217de3fa996d9e8b41de738b05cf83ac076eed980e26e9a2c50eabc5b3ca20"
+    },
+    {
+      "path": "display_assets/boltplus_images/display_system_resources/thumbnail_png/sphero-logo.png",
+      "sha256": "9560e33d5eec765828233131d9a2b8fa2127791827de1f77e28173fd9a1874c1"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sphero-sad.png",
+      "sha256": "0d09bfcc31952f1a0ede84a6ae451cd95a42589421fde35ef53a0caa5260f466"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sphero-sleeping.png",
+      "sha256": "ce95fb6432d59fc1f1b747affcd9d37043582571a44aed2455b9265d3af13d7d"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sphero-smiling.png",
+      "sha256": "2b1fdf362230bc54053f00f2552263832211b2cd25dbc3ef6b48622a65a74c3c"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sphero-sunglasses.png",
+      "sha256": "0002676942f04938813fd0cc2f7a44207ebdb083e0ee876a35a294e03849e214"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/spider.png",
+      "sha256": "3691ecca9ff5c6d99eb875e64f62172965848f6b0c02387f5d6c86bffae0b6f9"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/squid.png",
+      "sha256": "4f34e996bfa4c9e4c6ce405bc83b42cbecbdb13c4c8e8c375d446d0597d6ccac"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/squinting-with-tongue.png",
+      "sha256": "e0f47fad28c5ab6984a3837bc5f438b8de6a4068f4a013ca70d369bb91e467e6"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/squirrel.png",
+      "sha256": "19320da852f06684e21cdc266bb0c9cf6e650a4e50e46aa3f955fa72723a2f6c"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/stadium.png",
+      "sha256": "0ae848dd5a960240b5f93a5853ba790124c8d79499e2ec61291348d8a08f70aa"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/star.png",
+      "sha256": "8a91363af2aa4feaf5c4330d6d69dc52985cf954d1adcc035233aaa14b3f55a6"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/star-struck.png",
+      "sha256": "6480705a89acadb27ffcc07d80086d46b20a22ba75c035610cbf919af2dab1f6"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/stegosaurus.png",
+      "sha256": "d3611f02f48b7a3937a02f718222382f60bd45e2b003154f68df57a4b81e1a0f"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/stethoscope.png",
+      "sha256": "a5269e9fee4a6f9402cb9fbd4fa3a8982d0169738ef3c3d696df553ce93f89ea"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/stop.png",
+      "sha256": "de79f1f87260d4784de5e7cde270ff8354bc1625de42526ab82ce74d5ed22e5b"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/stop-light-green.png",
+      "sha256": "feffab90095c9dec87ccbf8d22bd720b3438e092727e459a4aad52ca77e6a019"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/stop-light-red.png",
+      "sha256": "8daa826ebbec9accadd0a1c6b882e8886ab82bc4744d25fc9fbacc90383fe0f4"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/stop-light-yellow.png",
+      "sha256": "a53a47e531c5ac311fa7d32012334fc9c78f3a6bdbca690aa62e796315317c62"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/stop-sign.png",
+      "sha256": "d32a03c52863955d25a4ebff0ff3d616f63ef5e311c09489ddc9372134c9ec5f"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/store.png",
+      "sha256": "5939531fe0bb792956ecc319239ea4ca0408faee62995598243587adae470124"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/straight-ruler.png",
+      "sha256": "fd9cc95d995364bd33b20dc152e8721fe618d31e72753d5feaece02b132b0eb7"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/strawberry.png",
+      "sha256": "1db808a9d035cfb0276365b99641dd05c7265e520ac93f9c2441fbd81973c7c5"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/sun.png",
+      "sha256": "500288340d94803f79f72f74add92dabad27e75fda0d0f581336d0499762501e"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/sunflower.png",
+      "sha256": "ad0de2e81fe2fc41b252618f1d455cd48148d83f3fbc138fd6abfcce9a888181"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/sunglasses.png",
+      "sha256": "d9711cce96e3c6547c8b915d7530b71a762e2b40caac054e19da972eed04e6e0"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/sushi.png",
+      "sha256": "dde380d8b3b0b7e7404988cafba93d88fdf7917db38a485ce68b20ce7abea438"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/suv.png",
+      "sha256": "e52e95a8a10ecd0e344e464d9b51c28e57cc551bede001be346258004c53c098"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/swan.png",
+      "sha256": "de8894c7c9a9f40504c16271f7683f7fba33392317d09cc7cb18cc40937c734b"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/sweet-potato.png",
+      "sha256": "07b0e28f920dc53b3d1a257bfe52639764c21c28ab2954be49bccd1e1e27f2ec"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/swimming.png",
+      "sha256": "b2c3680a13906d6f83829a0f1a0dca17b79e98332ad320def70d7636f9b777a9"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/taco.png",
+      "sha256": "a3f8b736d24be26425d696c3643e8cdce9c72e06b4ec321a6a24fcd0ac0e3be0"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/tadpole.png",
+      "sha256": "db3e8542bffee4d1ee55ee84add220975d9fc1396266ff48d029511ccf25af5d"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/tadpole-with-legs.png",
+      "sha256": "67896d3b8375d58bb1f9fab5a65d0023f606c68b98ba9c56c60f1ee74c34cf96"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/tamale.png",
+      "sha256": "0b87713aa97a5b796516a17867f4235b118f8d40a4f595b6bf635533621fc1ca"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/taxi.png",
+      "sha256": "7ddf53121f8616bec088053da2fab95776af2b331d0d2255f1a2f465ebeb242a"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/tea.png",
+      "sha256": "48ca0af00b97380c8e3ee0e7e62b9d2a9e7bd5bffaccc02e17f158053237a2f9"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/tears-of-joy.png",
+      "sha256": "700b7542865cd83ebcc0556f507da1c95da158283cb353f9e9a4b16216bb7f4f"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/television.png",
+      "sha256": "50bda77901ea8c2fbb557b3524cfdcdee19af6b9b4596479fd179bd09396ef33"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/tennis-ball.png",
+      "sha256": "b8236d0b49e4d8e1afabe29e136c1a7b4a2539cbea020956e395ff2c6d4149b2"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/ten-oclock.png",
+      "sha256": "1ffdf0b60be7bb60b3f92df5cb9371f0e5ece9f4b40f36a1c4cacc3a8e331276"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/thermometer.png",
+      "sha256": "d021230f61ad42bd73454b1cd7f492ae3aab65ee7ec5252a1b6e67f888cc2eba"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/thinking.png",
+      "sha256": "a5d7d1789fbda3b20c90e4e93f1055fdd46b7daad5cf9ef9cc5bd501130bf2c1"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/thought-balloon.png",
+      "sha256": "4ce20e6e04f52a97d1020e575ab8b389acfce974543494cd81da0d54d2840d66"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/three-leaf-clover.png",
+      "sha256": "066a7a5a7aabd338113ed169ee650ab5c09c88189b11de35ff2a4822cc876910"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/three-oclock.png",
+      "sha256": "4b2012e9d82586c5afc7c13fb1c8d58a3437c4497f9f3957235b8bfe2f7a82c8"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/thumbs-down.png",
+      "sha256": "4d9683056627770e3d77046819498d2ffd705f293200e88c8915a6a2213a85d4"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/thumbs-down-1.png",
+      "sha256": "9c7c42305d066408d620d0ae12e834e4f88b819feb598778260ebb196f73be2a"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/thumbs-down-2.png",
+      "sha256": "4de102f1e4e3ca700126b70d44f6633880fc4de034f321fa6d76f91184c4bf3f"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/thumbs-down-3.png",
+      "sha256": "4707d763a45609f53d06978254a39cab24d985a72bccab9531056eaebabd9ec2"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/thumbs-up.png",
+      "sha256": "f25589016dcb1b6d49d1945acfdd0595285c13facab1c3b2b434780eb5d5f474"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/thumbs-up-1.png",
+      "sha256": "d3005503e968535f3767be1b21520e6c1576f65a3d0852c1c05884c10f153922"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/thumbs-up-2.png",
+      "sha256": "215d63332d705c3ea2f21464754de237301c6e040ce5729ec1fb1ba4674f5470"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/thumbs-up-3.png",
+      "sha256": "8403887f478c8a592f50380a3f3298b6c0a892e7d9e9ec69d6775ee0c1bcefb9"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/tiger.png",
+      "sha256": "3d938c2ede43a44acc5631a4765e81e71531768c5f7bd1e992673044e53ee769"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/tiger-face.png",
+      "sha256": "821a01b9897541a4c33bcdfb8f92babc2a205882f265b503baf9f4a9b2fac2e9"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/tired.png",
+      "sha256": "faca2eb28b7c28263ed8193bfca31c6afd7a4f11c829219b27374113986ea1e9"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/tomato.png",
+      "sha256": "3be22760531172871410013afc49fb6a8c879dab9e2c4e24f49aadce22335f0b"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/tomato-flower.png",
+      "sha256": "aaf833ef90406ad8158b95a9cb731c01ad8834e493a7762c5032ed8405db1529"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/tomato-seeds.png",
+      "sha256": "4ef66d86bd75bfeaa3e60bf9b1cd959f3e328168ce7673fec3c6c3dd524d6b72"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/toolbox.png",
+      "sha256": "a05f3a4433900ece63f31932c069353a310dc4f1c29d6dc9a2ab7d151fe5dad4"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/toothbrush.png",
+      "sha256": "734588207518e50ba5f8e17ba4bb788bfc902497b8558a53ac75b426af682b3b"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/tornado.png",
+      "sha256": "d9c3616b929a0de323ba1433bc3cd7d17a8ce11839a9a1f6496bb7b031ce6977"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/tractor.png",
+      "sha256": "58bce2f7830eae617f6c12ee197a64490ca535515558d47f7516bbebe80dac60"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/train-car.png",
+      "sha256": "0926e91998f4bf195758b2a7ec5e833f279d8daefa750a9369b01075fe9ff171"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/train-locomotive.png",
+      "sha256": "df82f003ff60a1f52145759dae0b975da909a5d080a1d2aab3988f45a1cf5573"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/t-rex.png",
+      "sha256": "ba1ed494eb6bf0e8384567fae941081403c1dd2c7668da47c33d23d41ad7c3fc"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/triangular-ruler.png",
+      "sha256": "b44ba0cb6a5fb80a43ab915e975623caebd16b5bc3b872d41b242df4e829c5a6"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/triceratops.png",
+      "sha256": "33e19b6519fab0241d96b06fef4a6e13dae94e071700bfc58a922b16e75e46d3"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/troll.png",
+      "sha256": "4699f2f43f91a3a80b6fdaed52d2340467ce75dd86a621e866badf396748af07"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/trophy.png",
+      "sha256": "ccc374ed6de3f002bdc865e9d822b6aad64cd611d6081d8da386ed202f36a34d"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/tropical-fish.png",
+      "sha256": "572890af4a1a4ecf93eb15c82814db538fda02a2455066c3692b0df38d1556d1"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/tulip.png",
+      "sha256": "235dba3721760b22556662f8e02603a6bffa406502e4237ef5d264488144da69"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/birds/thumbnail_png/turkey.png",
+      "sha256": "10786a058440d93d2138c89357c591aa9d99d09e73e45c2372406ae3694dc2e7"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/turtle.png",
+      "sha256": "b6d692dcf36bef030da8ea87ac61723c72d3cef5fb6f51c5301e12d1f652d5a7"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/twelve-oclock.png",
+      "sha256": "8df4b2dc088e240e37ab58b05067739ac19a2f7260bb50e38f24ff82c02937fc"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/two-oclock.png",
+      "sha256": "3c255c4f448fedbaeb053007acb851d1f4a6893285ca058fe3f1fbd350fafc84"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/unamused.png",
+      "sha256": "ac3d5f1156fc61bcb8739b0363e2d26b372194f0228e9b6c08e438e026c8512f"
+    },
+    {
+      "path": "display_assets/boltplus_images/fantasy/thumbnail_png/unicorn-face.png",
+      "sha256": "2ae71700d153d48ec9404895d870880320b7bb496708bb2de550fc5a3a84849e"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/unlocked-padlock.png",
+      "sha256": "3f432affb904e41413ec1daed0ab1988622635848dca724210e1bbb4931d45be"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/uranus.png",
+      "sha256": "666858974dfe52f00d2983fe3edfae10b61d66b9efc0b1f2ccc78fafdb9e9c1f"
+    },
+    {
+      "path": "display_assets/boltplus_images/transportation/thumbnail_png/van.png",
+      "sha256": "54ef694ee222543b74e05a2864b482dae5126e67ca179d1685ead38b389660be"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/vase.png",
+      "sha256": "48b0211f3acbe157667d1f414d159bb6fa6a0ad151433ecfc6f413cbfe1d6cb5"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/amphibians_and_reptiles/thumbnail_png/velociraptor.png",
+      "sha256": "6d7c66dd101d8c1b3cca7986a73c1c128d798ca1299a08b719b1c72eb28675fe"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/venus.png",
+      "sha256": "12b6ec97ff0f2acf8d19b58e79838886c810163d80d92c6672f1d906625d05da"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/video-game-controller.png",
+      "sha256": "3e7ca03a1b787df76d589939ace13f1932ed1b17a223ad9263ccb389e2930388"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/volcano.png",
+      "sha256": "e5089a41d98ca075322ab7d26853e2d5d0500722152ef105629f3814a093f6fd"
+    },
+    {
+      "path": "display_assets/boltplus_images/sports_and_activities/thumbnail_png/volleyball.png",
+      "sha256": "e1679abd5b2bbee7d26e9f9d2530b487328413bbf257fe64aed4f8902aed1f43"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/vs.png",
+      "sha256": "4d401becd54ca52d54d823b5fdf674b4af51e94939c572c942805e878084c4d6"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/waning-crescent-moon.png",
+      "sha256": "08b6047c32d74ceb8c760f44755b466e051bea3f490dc9bf5555f5dbd7d18d16"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/waning-gibbous-moon.png",
+      "sha256": "3dda408f49609fc66f1ce4cc18b7b47e8a39e8fb94a13f6c808789d3e1ef3621"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/warning.png",
+      "sha256": "8cd24293a134fbac62acc7ceb8164ca2d1faa47a957b7a33c950d4765566adbb"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/prepared_food_and_drink/thumbnail_png/water.png",
+      "sha256": "925c870eccfafb9bab0f0da9ffdfa332aeab4aa76419c56e144f644a5460af66"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/water-buffalo.png",
+      "sha256": "dc4c1293027bae1c931ee0f45a5a4bc3b11aef2409b22cc3559f430eef4ad763"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/watermelon.png",
+      "sha256": "6e5f92c9e314cc5b6da438f838769f051b9141ade92a0707b26b1750911a982b"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/wave.png",
+      "sha256": "f4fd851ce3b6049f5f783052cb290bb5fb819c0326394125b248ac140371c82e"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/waving-hand.png",
+      "sha256": "0e4eb7461586d1b59a9717539ffb0afbb96b1ebb10589a4b6a8345909dd5fa6b"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/waving-hand-1.png",
+      "sha256": "ee36e7c05e8c64d6c87a6061d43237fbffa4f71b268aaaaf840f095b143e0ea6"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/waving-hand-2.png",
+      "sha256": "cfad726e1571d2326607ee2de363683608c82ac847060112dc2f70eaa827efee"
+    },
+    {
+      "path": "display_assets/boltplus_images/hand_gestures/thumbnail_png/waving-hand-3.png",
+      "sha256": "d69bc738b740e381157d46f440f6bede47fdbbc00c2a8bfa3d534d284a7d2fc3"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/waxing-crescent-moon.png",
+      "sha256": "871a9c41d771204fd8d07c75b74f0bd1896322903aa8b6da1409fabe3eda7c51"
+    },
+    {
+      "path": "display_assets/boltplus_images/space/thumbnail_png/waxing-gibbous-moon.png",
+      "sha256": "2522eadd8faba30649ef510fd1949b7d16756b5881410647b1bc266bc64ea2f5"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/weary.png",
+      "sha256": "b86e594be8780e88a0f9ee1e264c971b16f5d105c8be273dcdff0b970c2b4886"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/weather-cloudy.png",
+      "sha256": "611488ad82c7d16286599adfb2bc9b149a56bb18a432525ac9a3024298eb8531"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/weather-lightning.png",
+      "sha256": "1aefffe3799f11685371111c90bdaf39aff20455303b4e4cc1e18dc70631d436"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/weather-raining.png",
+      "sha256": "2c892f1ea63e1b9cec13cbfc1af20e2e1ad5e8801a55e241ac8a14ca04e0261c"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/weather-snowing.png",
+      "sha256": "7514a3249980291b08320acbd9fed162597ad1ff39fc0375b890146000c0a7d1"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/weather-sunny-and-cloudy.png",
+      "sha256": "66dc65f421bd49dba34814e9ec6e88914e9da5b1ffe856f93194dc2a5c4f8be0"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/weather-sunny-and-raining.png",
+      "sha256": "f1f95f814f953074bb90b261fbd22e149b5e43d60578fb675b3f5aab30625efb"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/weather-thunderstorm.png",
+      "sha256": "ef40ac5569710ad1376f00c92ee4a3eb88df756c953900ecaf23b87602a73872"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/web.png",
+      "sha256": "e9e086209eceea84d5036ba7c1595439f0c7ba66471ad09a7463c5140eb4617e"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/aquatic_animals/thumbnail_png/whale.png",
+      "sha256": "d6b34a148e15e1fd729378f027fe9383fbf570c65b6c2f8cf7a861cec42b536b"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/wheat.png",
+      "sha256": "477b3590a99706cd1998f823e7bb4d8c5241036891f9ab5f8c4e2264e7f0ae95"
+    },
+    {
+      "path": "display_assets/boltplus_images/general_objects/thumbnail_png/wheelchair.png",
+      "sha256": "d354c2692db03dbc12c4e4dc6d9039773df86c83511c516f545192d1e89dbcad"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/winking.png",
+      "sha256": "6809b53932f9715cba36e9d3fca2707f4372ed43cd06898c4ca9f8e08de461aa"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/wireless.png",
+      "sha256": "313cb88493c357225f8464f7c5a5c249fc241848ef40a1460bffe38fcd9b4e8d"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/wolf.png",
+      "sha256": "49f9464d54c68cd61fe171d2426deff76b8e42f6ad34d6dabdb7cc5747069c36"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/wolf-face.png",
+      "sha256": "1d7f97e91f22ed984acb0450e3bc4de40fb706a9169b964f81f9176460fc57ea"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/woozy.png",
+      "sha256": "387b552a49863f52943cfcb8f85ae778b2838757277012409ab7267d6ea0ee5c"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/insects/thumbnail_png/worm.png",
+      "sha256": "2f547782da8f43bfd2bee516f7f901df97bce1ce6a591d1e5129a9c4a1739c0c"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/worried.png",
+      "sha256": "b21a9e0619d0f66df3dc50628001fe8a7ec95d6b6a5fed8b29640cf09b736562"
+    },
+    {
+      "path": "display_assets/boltplus_images/tools/thumbnail_png/wrench.png",
+      "sha256": "f3b21d84b2b1ceac80888a50fcaf9f43fd61976dcbb7727b506cc591a6061118"
+    },
+    {
+      "path": "display_assets/boltplus_images/food_and_drink/raw_ingredients/thumbnail_png/yam.png",
+      "sha256": "fd2efeb5d77ffb0d81075271b7d39fff6cf4918f31818b04345e3fb481a037ca"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/yawning.png",
+      "sha256": "da8b94b550dbe10249b02debbc4e6d70ff58d8665665aaa605375165be7182ed"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/young-soybean-plant.png",
+      "sha256": "d356a324c17ef5a5ff738bcebcd4346ef21ed1c6e9ca1862c1b007789933ee95"
+    },
+    {
+      "path": "display_assets/boltplus_images/nature/thumbnail_png/young-tomato-plant.png",
+      "sha256": "9cbe1ed0f5276cf5795c6ff9987a75ed7263fd4075ee20eaf4303834aa18776d"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/zany.png",
+      "sha256": "9ce2fc2b87bf02a27745bce6a836a35ecf25f10116896006d0c159f08bdfbc47"
+    },
+    {
+      "path": "display_assets/boltplus_images/animals/land_mammals/thumbnail_png/zebra.png",
+      "sha256": "31c722736c1e94d35aecd176ece834a96af8d7d2775c32394cdf85639f49dceb"
+    },
+    {
+      "path": "display_assets/boltplus_images/emoji/thumbnail_png/zipper-mouth.png",
+      "sha256": "84b0181691b85d40cadea052abacf333797f8d2d70058d628dde7b1c71ed930d"
+    },
+    {
+      "path": "display_assets/boltplus_images/locations/thumbnail_png/zoo.png",
+      "sha256": "b09ffbd5e7c55c544481f4e647ddca2efe65731c3f3af8c0aea8a7103567b0cb"
+    },
+    {
+      "path": "display_assets/boltplus_images/symbols_and_icons/thumbnail_png/zzz.png",
+      "sha256": "7fcdf1778149475dfe4bb0e940dd398f3dc9f344d82f1d5e8bb99cfac48ffd49"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/airplane-animation.png",
+      "sha256": "ec88ce3ef034c76b7a5aad295b4e2eb1831d6b6802cf72504525906064fe2aef"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/applause.png",
+      "sha256": "25d5ca9e3e99e6eb935bd3ed46471ad46257f25d91899ab81ab06de2b268b79d"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/automobile.png",
+      "sha256": "12c12b9da9a27827c42caa74732e20309eda65e56f5075959ee46f05e446875d"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/bell-ringing.png",
+      "sha256": "232615ccc6b46b1f09a7585279df4bc02668bd0921e442e4797fe7a1c3d84633"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/birthday-cake-animation.png",
+      "sha256": "ac11ca7b061c0c933bf708fa03bd93ad89f21ba050e9927faba393543b21e37d"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/bubbles-pop.png",
+      "sha256": "d723fe723d0716d054d8bddab3b605dc6564d7ab393471870bd838a7bee648aa"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/butterfly-animation.png",
+      "sha256": "2edb567b0f7f5ae45a29f035f700d76df77c46e3f7f804ca802b4303c3f2a821"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/car-driving-highway.png",
+      "sha256": "5d5e3dd88dc319675c2005635ff81bed76d1031241f96ad44da4b9915b7d6305"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/check-mark-button.png",
+      "sha256": "13ebae5534be03c186429721b8a8a8b4e73f968674ef437b05b2c28356e8ae55"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/clapper-board.png",
+      "sha256": "3c2708f2036a5a5d26070e05d4c38177d9b4eabe57327aacefdedf2e08e8a789"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/clock-animation.png",
+      "sha256": "f4154681299f96372ea922c99d29087373bc45d1dfebae7441aec4dc92d88d95"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/coin-flip.png",
+      "sha256": "4de48e4b359bc721b2586384f9a96356a6fea66bcde2f4a18712e28239d07e88"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/confetti.png",
+      "sha256": "998ad5410adaef1b2ab5eee90d61dfa880cb48c3f76f9ab43c2f082a9a6662d9"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/curtain-closing.png",
+      "sha256": "19d7e590d9ed2b76a736a3a8833f4a77ff0408cdb9190ce426f25fa2bb1313c8"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/curtain-opening.png",
+      "sha256": "62d0b975e9d20b3b91c20278f789114087d16e620c8c2258c208c309fecf689e"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/damage.png",
+      "sha256": "ef2cff140432658ca256d54ce4068e5a7c76075b22e9fe4b3e7060d8c62222e4"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/dice-rolling.png",
+      "sha256": "0cd0279b62536da5f1a85d5d18d0af9f39c61cb319e9a73a0fdcd99eeb6ec996"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/driving-arrow-1a.png",
+      "sha256": "3a87e5ff6b59909aae17861ea92a9f7a98880a7ca5e0e1c66ccb44854ff2cdc7"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/driving-arrow-1b.png",
+      "sha256": "147787cc9da9ffdc6b654e04ae81643b56f0222eb0d4ddade1888dfdf0c385ce"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/driving-arrow-1c.png",
+      "sha256": "6c0f831ae5baa4cbfa604732741a19dbfe71c135ce2226fd3be87a58465f4699"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/driving-arrow-2a.png",
+      "sha256": "bb1806efd8b9705a548d3f4296280755dfde857645bb32c42ae7b73e0c877fd3"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/driving-arrow-2b.png",
+      "sha256": "76780242b7662d7ac3aceb95521a9032895726594d0f180fcdc9f12c30db8d8c"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/driving-arrow-2c.png",
+      "sha256": "988c5d8c04513f2cccfbeb4c20b4edba2875bb2e0734adfd1e8ec578a85849a7"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/driving-arrow-3a.png",
+      "sha256": "55dbe7ed241d69d915295a652195e17c066b4cbd3b4450ba9b1a6d930a7c9749"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/driving-arrow-3b.png",
+      "sha256": "9247d528ecb33417ad924e5b6a5405819ec61c4252d3afaf8eb8e5defcc0564d"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/driving-arrow-3c.png",
+      "sha256": "14ae773ec3482692f67f055f0c5726cfa431bae15a381775fecebb58ecb0ba64"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/driving-speedline.png",
+      "sha256": "4adcb6a1ab1901fbcc198d84dff2d8d32a5e155df68f13d9f0fe13a93b453e88"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/explosions.png",
+      "sha256": "73a0e138a16d52794cf78b01b607689ff435caa8d96bf5b8f487df1df7a180fe"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/fire-animation.png",
+      "sha256": "6ba9b6d964d2d3ae0ff5b5bf4b01c06aa9c570e6760d4454d6208fb2742cdf89"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/fireworks.png",
+      "sha256": "e43aac909d946dfe5bf6063107e11df4ad84f99b8734db302e6848a77577e96d"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/fireworks-2.png",
+      "sha256": "3dc34d848147536bf4339a828f265ebd1777a5a012c6702f7fe7524d0ed88dd1"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/fish-animation.png",
+      "sha256": "6409c852e9ada8b397f1ca2c9c6b2f0147743197cf990b36192aaea83437cd50"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/ghost-animation.png",
+      "sha256": "43e1f79f35b429fcaf4c1013b90c886e4935f25bec5998ac7ca1bf78d9ac978c"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/globe.png",
+      "sha256": "83953ffdbb6109a2c2de21777317cec9227d8b5d0d8099c3e2c07b758993b95d"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/handshake-animation.png",
+      "sha256": "89cedd9ce6c28202eb37c423951d6b919f471ff68db6c2ec599583a91c55ca6f"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/helicopter-animation.png",
+      "sha256": "97eec2fa72cfe7ff4ef7d57dcf321c6609042e1913c631ab757159e726c3ac3e"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/honeybee-animation.png",
+      "sha256": "58fe863dd01845214765510b2d831848cf52da055061b152f51a09b6d06eea99"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/horse-animation.png",
+      "sha256": "8562f73a9312c8f74581417fc76cf6f721ea52c395291d24477da434d119d16d"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/kangaroo-animation.png",
+      "sha256": "41a57d25e20b742f56f6750d24cca3a8202447168f67c45c74f3f7e69352ebca"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/lasers.png",
+      "sha256": "8d0a5b463951fa05c9372a3614084bc59b5e91b71e80d4cca88ac2f8b640246d"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/light-bulb-animation.png",
+      "sha256": "0d0a4f0e267d2cbe4a9f713629471adfe9a0617e10558584d14438c0655babc7"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/loading-bar.png",
+      "sha256": "e5bb52ada3a4777c423c4283f8f764c1306fd08c7dbbaedda54902a0c3f59fd0"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/owl-animation.png",
+      "sha256": "34e6f6b8e52af34afa00999de7033b734c3d6ac9ccceb3046388abe9af06e61a"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/padlock-locking.png",
+      "sha256": "1c3c1ca9d2c551f7337ee7b92d21e1b1554fd9fe25000507864eb3275509a2fb"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/padlock-unlocking.png",
+      "sha256": "cd44c88ea551be42bdac61e16aa82108ff42d75320f5b62cd457fad42c288c79"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/penguin-animation.png",
+      "sha256": "78a32174ad074a89102d1795a3d4765115c77952a347ac98d267e1edef129b9f"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/pointing-up.png",
+      "sha256": "2bc871853289c1eceded2461ec8c62788f306f8e4df5b032e6c58e0a13d39a20"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/potion.png",
+      "sha256": "4cf0678e5e4f21106abc1a10f7d2ca85c9c25125fc5bccf78538df53a9400b57"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/prohibited-animation.png",
+      "sha256": "f0a5b5f02b004d333f9dd8bed5c4d57d390b22a2dc6ae619c733371d9ef1e9fa"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/rainbow-color-fade.png",
+      "sha256": "0c9ddc47a74bbdc2e56d3cd7a644b0e2cd164ce2e70eacc8a19c239a9aa53bde"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/driving-arrow-1a.png",
+      "sha256": "3a87e5ff6b59909aae17861ea92a9f7a98880a7ca5e0e1c66ccb44854ff2cdc7"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/roboteye-blink.png",
+      "sha256": "3513d6859747253a5e4dab94ff7053d8f9c89045c3cbc0cef040374eea90d8da"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/padlock-locking.png",
+      "sha256": "1c3c1ca9d2c551f7337ee7b92d21e1b1554fd9fe25000507864eb3275509a2fb"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/fireworks.png",
+      "sha256": "e43aac909d946dfe5bf6063107e11df4ad84f99b8734db302e6848a77577e96d"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/weather-rain.png",
+      "sha256": "23e9cf92ead8ce67f95521850b69a2931dbcd0145512ce9d97013992dedf80b4"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/red-alarm.png",
+      "sha256": "76e4fc9a7d6ba38bfbd89aacc9b6e38fcac0117ed3ade003735e03792ebcbda5"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/roboteye-angry.png",
+      "sha256": "350875cafce6574baa02a5268bc9d2ef3257349fba7999e4e60016105bd1bb58"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/roboteye-blink.png",
+      "sha256": "3513d6859747253a5e4dab94ff7053d8f9c89045c3cbc0cef040374eea90d8da"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/roboteye-dizzy.png",
+      "sha256": "4206d1167816b88cac2f86dc198d9e8aa67f4e44ce9f7dd200b9818e6cc3300d"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/roboteye-giggle.png",
+      "sha256": "6f11cd23ecf6877d4e18cf9052ac78e5b9c289e15f7a729a8086e6871a4abe40"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/roboteye-look-side.png",
+      "sha256": "8fcee3eab5bfb2691686d19569e520b328f586ca1c3cf373b5ef9680a499d67e"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/roboteye-love.png",
+      "sha256": "a5a647d6ec6ec099a3d292afd514983dcfa2caafc0623c329ecbd5f71d5d5671"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/roboteye-surprised.png",
+      "sha256": "0ed403e7425103752f80f2482560ebb57c02063eba2eefdc760a2f137a42a899"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/roboteye-suspicious.png",
+      "sha256": "bae78a91f736c9f1fb7f4413e8c17fbae2e3d1d163ba681f0129ab51b229bbe7"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/roboteye-teary.png",
+      "sha256": "181b61e96ad8981737e18240b5d7e1c794f4f620c622120882c5927bd6bf76e3"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/rooster-animation.png",
+      "sha256": "4eeb38b99f9f6280383666b9207ea6545363bf3dd363a805082f4584913b9d35"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/signal-blast.png",
+      "sha256": "4746a743fbd44f6c1dd48497c98a31fe3f6bc985486b0d0f6b3ace6a17622adf"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/signal-receive.png",
+      "sha256": "364ba315283106d2ecc349bf12187d42d2c6c19166c82a17f5d82488ac897cc0"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/snake-animation.png",
+      "sha256": "ca36a430841b445a1bf9d4caeee9e2cc9dc81526d136657c1c8dbb55113e18ad"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/snowman-animation.png",
+      "sha256": "1d61604f7d1b1eaaa614b74b6fa456a376d86161e1842ac6616966302a56ebc3"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/sparkles.png",
+      "sha256": "9bd3460212fac7fda844ea920efa32c6c62c4a0d1530cd94354e9ccde526f3f9"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/sun-animation.png",
+      "sha256": "5488bf5eca63180baa95ff94ae52751c60889ea1b60a16153cefe1772236ae88"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/thumbs-up-animation.png",
+      "sha256": "e7dc7d26ea54eb3790487e6e7ed3cf6bfb0e74ed8a04ebd4971adef87a873dc9"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/train-animation.png",
+      "sha256": "029a7a6e55d0f3f5e787d7eaf3f22075ef585b6d3c6aa124e1a5ed70620c80a5"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/volcano-animation.png",
+      "sha256": "36a8b19f5697f4a2377fb73f4bafcab4af498151c3b90a936315bb31361e523b"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/warning-animation.png",
+      "sha256": "d5ecc9ba25f883310278174b021ff7a1adb9e28d338f1e9ebbaf59650c9786e4"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/waves.png",
+      "sha256": "d0620d032cf72d04f009b5fced682d26ac599e0924fee118a1e9286ff2418663"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/waving-animation.png",
+      "sha256": "bbee710c4dc5798f690b03965a0317c2db60acb4bce0f60440d1f6b61f322773"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/weather-rain.png",
+      "sha256": "23e9cf92ead8ce67f95521850b69a2931dbcd0145512ce9d97013992dedf80b4"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/weather-snow.png",
+      "sha256": "35f469a957ff84eb23f3e04b8c06226f8b6bf01241481df616d7044d2e1862cd"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/weather-tornado.png",
+      "sha256": "445f901d2aad35f45a83e9c2fbe5f0d06a6cf332df5ef790049ae96459de4bf4"
+    },
+    {
+      "path": "display_assets/boltplus_animations/animations/thumbnail_png/weather-wind.png",
+      "sha256": "e7dd0a5500fa92aa6ec8afb42c17739f1464bd6737f282d478cc764c6638ca61"
+    }
+  ]
+}

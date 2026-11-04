@@ -166,3 +166,133 @@ asyncio.run(check())
   const result = spawnSync('python3', ['-c', `HELPER = ${JSON.stringify(helper)}\n${check}`], { encoding: 'utf8' });
   assert.equal(result.status, 0, result.stderr || result.error?.message);
 });
+
+test('course API is async, importable, validates before RPC, and preserves raw speed and sensor results', () => {
+  const helper = vm.runInContext('PYTHON_HELPER', worker().context);
+  const check = String.raw`
+import asyncio, inspect, json, sys, types
+js = types.ModuleType('js')
+requests, sleeps = [], []
+async def request(kind, method, args, origin):
+    assert kind == 'robot' and origin == 21
+    requests.append((method, json.loads(args)))
+    return json.dumps({'x': 1.25, 'y': -2, 'z': 3} if method == 'get_sensor_data' else (123.75 if method == 'get_ambient_light' else None))
+js._ideRequest = request
+sys.modules['js'] = js
+_ide_display_library_json = json.dumps({'images': [{'id': 'cat', 'fwid': 642, 'constant': 'CAT'}, {'id': 'angry', 'fwid': 256, 'constant': 'ANGRY'}], 'animations': [{'id': 'fireworks', 'fwid': 1029, 'constant': 'FIREWORKS'}]})
+ffi = types.ModuleType('pyodide.ffi')
+ffi.can_run_sync = lambda: False
+ffi.run_sync = lambda value: None
+sys.modules['pyodide'] = types.ModuleType('pyodide')
+sys.modules['pyodide.ffi'] = ffi
+exec(compile(HELPER, '<ide-worker>', 'exec'))
+from sphero import bolt, set_heading, roll_to_distance, stop_roll, set_main_led, set_display_text, get_ambient_light, delay, DisplayImage, DisplayAnimation, list_display_images, list_display_animations
+rgb = {'r': 0, 'g': 128, 'b': 255}
+async def check():
+    token = _ide_origin.set(21)
+    for name in ('set_heading', 'roll_to_distance', 'stop_roll', 'set_main_led', 'set_display_text', 'get_ambient_light', 'delay', 'set_display_color', 'clear_display', 'set_display_rotation', 'set_display_image', 'set_display_animation', 'set_live_sensor_data', 'set_front_led', 'set_back_led', 'set_left_led', 'set_right_led', 'get_sensor_data', 'get_acceleration', 'get_gyroscope', 'get_orientation', 'get_location', 'get_velocity', 'get_battery_percentage'):
+        assert inspect.iscoroutinefunction(getattr(_sphero, name)), name
+        assert getattr(_sphero, name) == getattr(bolt, name), name
+    async def sleep(seconds):
+        sleeps.append(seconds)
+    original_sleep = _asyncio.sleep
+    _asyncio.sleep = sleep
+    try:
+        await set_heading(359)
+        await roll_to_distance(90, 25, 10.5)
+        await bolt.roll_to_distance(0, 255, 0)
+        await stop_roll()
+        await bolt.stop_roll(0)
+        await set_main_led(rgb)
+        await set_display_text('Hello', rgb, {'r': 1, 'g': 2, 'b': 3}, 0)
+        await set_display_text('Font one', font=1)
+        await bolt.set_display_color(rgb)
+        await bolt.clear_display()
+        await bolt.set_display_rotation(90)
+        await bolt.set_display_image(65535)
+        await bolt.set_display_image(DisplayImage.CAT)
+        await bolt.set_display_image('angry')
+        await bolt.set_display_animation(4)
+        await bolt.set_display_animation(DisplayAnimation.FIREWORKS, False)
+        assert DisplayImage.CAT == 'cat' and DisplayImage.ANGRY == 'angry' and DisplayAnimation.FIREWORKS == 'fireworks'
+        images = list_display_images()
+        images.clear()
+        assert len(list_display_images()) == 2 and len(list_display_animations()) == 1
+        await bolt.set_live_sensor_data(64)
+        for method in ('set_front_led', 'set_back_led', 'set_left_led', 'set_right_led'):
+            await getattr(bolt, method)(rgb)
+        light = await get_ambient_light()
+        assert light == 123.75 and isinstance(light, float)
+        assert await get_ambient_light(2) == 123.75
+        sensor_result = {'x': 1.25, 'y': -2, 'z': 3}
+        assert await bolt.get_sensor_data('orientation', 3) == sensor_result
+        for method in ('get_acceleration', 'get_gyroscope', 'get_orientation', 'get_location', 'get_velocity'):
+            assert await getattr(bolt, method)() == sensor_result
+        await bolt.get_battery_percentage()
+        await delay(0.25)
+        await bolt.delay(0)
+        assert sleeps == [0.25, 0]
+        assert requests == [
+            ('set_heading', [359]), ('roll_to_distance', [90, 25, 10.5]),
+            ('roll_to_distance', [0, 255, 0]), ('stop_roll', []), ('stop_roll', [0]),
+            ('set_main_led', [rgb]), ('set_display_text', ['Hello', rgb, {'r': 1, 'g': 2, 'b': 3}, 0]),
+            ('set_display_text', ['Font one', {'r': 255, 'g': 255, 'b': 255}, {'r': 0, 'g': 0, 'b': 0}, 1]),
+            ('set_display_color', [rgb]), ('clear_display', []), ('set_display_rotation', [90]),
+            ('set_display_image', [65535]), ('set_display_image', ['cat']), ('set_display_image', ['angry']),
+            ('set_display_animation', [4, True]), ('set_display_animation', ['fireworks', False]),
+            ('set_live_sensor_data', [64]), ('set_front_led', [rgb]), ('set_back_led', [rgb]),
+            ('set_left_led', [rgb]), ('set_right_led', [rgb]), ('get_ambient_light', []),
+            ('get_ambient_light', [2]), ('get_sensor_data', ['orientation', 3]),
+            ('get_sensor_data', ['accelerometer', 10]), ('get_sensor_data', ['gyroscope', 10]),
+            ('get_sensor_data', ['orientation', 10]), ('get_sensor_data', ['locator', 10]),
+            ('get_sensor_data', ['velocity', 10]), ('get_battery_percentage', [])
+        ], requests
+        before = len(requests)
+        invalid = [
+            lambda: set_heading(True), lambda: set_heading(360), lambda: set_heading(float('nan')),
+            lambda: roll_to_distance(-1, 25, 10), lambda: roll_to_distance(0, 256, 10),
+            lambda: roll_to_distance(0, True, 10), lambda: roll_to_distance(0, '25', 10),
+            lambda: roll_to_distance(0, 25.5, 10),
+            lambda: roll_to_distance(0, 25, -1), lambda: roll_to_distance(0, 25, float('inf')),
+            lambda: stop_roll(False), lambda: stop_roll(-1),
+            lambda: set_main_led([0, 1, 2]), lambda: set_main_led({'r': 0, 'g': 1}),
+            lambda: set_main_led({'r': 1.5, 'g': 1, 'b': 2}),
+            lambda: set_main_led({'r': True, 'g': 1, 'b': 2}),
+            lambda: set_main_led({'r': 256, 'g': 1, 'b': 2}),
+            lambda: set_display_text(42, rgb, rgb, 0),
+            lambda: set_display_text('A', rgb, {'r': 0, 'g': -1, 'b': 0}, 0),
+            lambda: set_display_text('A', rgb, rgb, 2), lambda: set_display_text('A', rgb, rgb, False),
+            lambda: bolt.set_display_rotation(True), lambda: bolt.set_display_rotation(45),
+            lambda: bolt.set_display_image(-1), lambda: bolt.set_display_image(65536),
+            lambda: bolt.set_display_image('fireworks'), lambda: bolt.set_display_image('missing'),
+            lambda: bolt.set_display_image('https://example/image.png'), lambda: bolt.set_display_image('custom.gif'),
+            lambda: bolt.set_display_animation('cat'), lambda: bolt.set_display_animation('missing'),
+            lambda: bolt.set_display_animation('custom.gif'),
+            lambda: bolt.set_display_animation(0, 1), lambda: bolt.set_live_sensor_data(True),
+            lambda: bolt.set_live_sensor_data(3), lambda: bolt.get_ambient_light(0),
+            lambda: bolt.get_ambient_light(61), lambda: bolt.get_ambient_light(float('inf')),
+            lambda: bolt.get_sensor_data('bad'), lambda: bolt.get_sensor_data('velocity', True),
+            lambda: bolt.get_sensor_data('velocity', 0),
+            lambda: delay(-1), lambda: delay(True), lambda: delay(float('nan')),
+        ]
+        for call in invalid:
+            try:
+                await call()
+            except ValueError:
+                pass
+            else:
+                raise AssertionError('Invalid command was accepted')
+        assert len(requests) == before
+        assert sleeps == [0.25, 0]
+        requests.clear()
+        program = 'from sphero import roll_to_distance, get_ambient_light, stop_roll\nasync def start_program():\n    await roll_to_distance(180, 25, 20)\n    assert await get_ambient_light() == 123.75\n    await stop_roll()'
+        assert await _ide_run(program, 'course.py', 21) == 0
+        assert requests == [('roll_to_distance', [180, 25, 20]), ('get_ambient_light', []), ('stop_roll', [])]
+    finally:
+        _asyncio.sleep = original_sleep
+        _ide_origin.reset(token)
+asyncio.run(check())
+`;
+  const result = spawnSync('python3', ['-c', `HELPER = ${JSON.stringify(helper)}\n${check}`], { encoding: 'utf8' });
+  assert.equal(result.status, 0, result.stderr || result.error?.message);
+});

@@ -89,11 +89,12 @@ async def start_program():
     print("Done!")
 `;
 
-let worker = null, pythonReady = false, running = false, runId = 0;
+let worker = null, pythonReady = false, running = false, stopping = false, runId = 0;
 let startedAt = 0, runAbort = null, inputRequest = null;
 let robotQueue = Promise.resolve();
 const stopBtn = $("stop"), boltBtn = $("bolt");
 let aim = null;
+let course = null;
 
 function runtimeStatus(text) { statusEl.textContent = text; }
 
@@ -113,7 +114,7 @@ function boot() {
       pythonReady = true;
       $("pyver").textContent = 'Python ' + message.version;
       runtimeStatus('Ready — Ctrl+Enter to run');
-      runBtn.disabled = running;
+      runBtn.disabled = running || stopping;
     } else if (message.type === 'fatal') {
       runtimeStatus('Python failed to load');
       write(message.message + '\nCheck your internet connection and reload the page.\n', 'err');
@@ -136,7 +137,7 @@ function boot() {
     if (running) void stopProgram('Program stopped after a Python worker error.');
     else runtimeStatus('Python failed to load — reload to retry');
   };
-  activeWorker.postMessage({ type: 'init', indexURL: PYODIDE_URL });
+  activeWorker.postMessage({ type: 'init', indexURL: PYODIDE_URL, displayLibrary: window.BoltDisplayLibrary });
 }
 
 function hideInput() {
@@ -156,7 +157,7 @@ $("inputForm").onsubmit = event => {
 };
 
 async function run() {
-  if (!pythonReady || running) return;
+  if (!pythonReady || running || stopping) return;
   if (bolt.state === 'connected' && !aim.confirmed) {
     write('>>> Aim BOLT+ to choose forward, then press Run.\n', 'sys');
     await aim.open();
@@ -176,6 +177,8 @@ async function run() {
   startedAt = performance.now();
   const activeId = runId;
   try {
+    await course?.drain();
+    if (!running || runId !== activeId) return;
     if (bolt.state === 'connected') await bolt.prepareProgram();
     if (running && runId === activeId) worker.postMessage({ type: 'run', code: getCode(), filename, runId });
   } catch (error) {
@@ -189,11 +192,11 @@ async function finishRun(message) {
   // Invalidate queued robot calls, including any unawaited background tasks.
   runAbort.abort();
   hideInput();
-  try { await bolt.stop(); } catch (error) { write(error.message + '\n', 'err'); }
+  await stopRobotWork('The program has finished.');
   if (finishedId !== runId || !running) return;
   running = false;
   aim.setRunning(false);
-  stopBtn.disabled = true;
+  stopBtn.disabled = bolt.state !== 'connected';
   $("starter").disabled = false;
   runBtn.disabled = !pythonReady;
   runtimeStatus('Ready — Ctrl+Enter to run');
@@ -205,7 +208,20 @@ async function finishRun(message) {
 }
 
 async function stopProgram(reason = 'Program stopped.') {
-  if (!running) return;
+  if (stopping) return;
+  if (!running) {
+    stopping = true;
+    runBtn.disabled = true;
+    stopBtn.disabled = true;
+    try { await stopRobotWork(reason); }
+    finally {
+      stopping = false;
+      runBtn.disabled = !pythonReady;
+      stopBtn.disabled = bolt.state !== 'connected';
+    }
+    return;
+  }
+  stopping = true;
   running = false;
   aim.setRunning(false);
   runId++;
@@ -218,9 +234,19 @@ async function stopProgram(reason = 'Program stopped.') {
   stopBtn.disabled = true;
   $("starter").disabled = false;
   write('>>> ' + reason + '\n', 'sys');
-  try { await bolt.stop(); } catch (error) { write(error.message + '\n', 'err'); }
+  await stopRobotWork(reason);
   robotQueue = Promise.resolve();
+  stopping = false;
+  stopBtn.disabled = bolt.state !== 'connected';
   boot();
+}
+
+async function stopRobotWork(reason) {
+  const cleanup = course?.cancelAll(reason);
+  const previousQueue = robotQueue;
+  // Send Stop immediately, then finish old callbacks before a new run can start.
+  try { await bolt.stop(); } catch (error) { write(error.message + '\n', 'err'); }
+  await Promise.allSettled([cleanup, previousQueue]);
 }
 
 function pause(milliseconds, signal) {
@@ -237,26 +263,64 @@ async function handleRobot(message, activeWorker) {
   const sdk = bolt.sdk;
   const isCurrent = () => worker === activeWorker && running && message.runId === runId && !signal?.aborted;
   if (!isCurrent()) return;
-  let error = null;
+  let error = null, result = null;
   try {
     if (bolt.state !== 'connected') throw new Error('Connect BOLT+ before running robot commands.');
-    if ((message.method === 'roll' || message.method === 'set_heading') && !aim.confirmed) throw new Error('Aim BOLT+ before running movement commands.');
+    if (['roll', 'set_heading', 'roll_to_distance'].includes(message.method) && !aim.confirmed) throw new Error('Aim BOLT+ before running movement commands.');
+    if (['roll', 'set_heading', 'roll_to_distance'].includes(message.method)) course.assertMovementReady();
     const args = message.args;
+    if (!Array.isArray(args)) throw new Error('Robot command arguments must be a list.');
     const numeric = (value, min, max) => typeof value === 'number' && Number.isFinite(value) && value >= min && value <= max;
+    const rgb = color => color && typeof color === 'object' && !Array.isArray(color) &&
+      ['r', 'g', 'b'].every(channel => numeric(color[channel], 0, 255) && Number.isInteger(color[channel]));
+    const channels = color => [color.r, color.g, color.b];
     if (message.method === 'set_color' && args.length === 3 && args.every(n => numeric(n, 0, 255) && Number.isInteger(n))) {
       await bolt.setColor(...args);
     } else if (message.method === 'roll' && args.length === 3 && numeric(args[0], 0, 359) && numeric(args[1], 0, 100) && numeric(args[2], 0, 86400)) {
       try {
         await bolt.drive(args[0], args[1]);
         if (isCurrent()) await pause(args[2] * 1000, signal);
-      } finally { if (bolt.sdk === sdk) await bolt.stop(); }
+      } finally {
+        if (bolt.sdk === sdk && worker === activeWorker && message.runId === runId) await bolt.stop();
+      }
     } else if (message.method === 'stop' && args.length === 0) await bolt.stop();
     else if (message.method === 'set_heading' && args.length === 1 && numeric(args[0], 0, 359)) {
-      bolt.heading = args[0];
-      await bolt.stop();
+      await course.set_heading(args[0], { signal });
+    } else if (message.method === 'roll_to_distance' && args.length === 3 && numeric(args[0], 0, 359) &&
+      numeric(args[1], 0, 255) && Number.isInteger(args[1]) && numeric(args[2], 0, Number.MAX_VALUE)) {
+      await course.roll_to_distance(...args, { signal });
+    } else if (message.method === 'stop_roll' && (args.length === 0 || (args.length === 1 && numeric(args[0], 0, 359)))) {
+      if (args.length && !aim.confirmed) throw new Error('Aim BOLT+ before choosing a stopped heading.');
+      await course.stop_roll(args[0] ?? null, { signal });
+    } else if (message.method === 'set_main_led' && args.length === 1 && rgb(args[0])) {
+      await course.set_main_led(channels(args[0]), { signal });
+    } else if (message.method === 'set_display_text' && args.length === 4 && typeof args[0] === 'string' &&
+      rgb(args[1]) && rgb(args[2]) && [0, 1].includes(args[3])) {
+      await course.set_display_text(args[0], channels(args[1]), channels(args[2]), args[3], { signal });
+    } else if (message.method === 'set_display_color' && args.length === 1 && rgb(args[0])) {
+      await course.set_display_color(channels(args[0]), { signal });
+    } else if (message.method === 'clear_display' && args.length === 0) {
+      await course.clear_display({ signal });
+    } else if (message.method === 'set_display_rotation' && args.length === 1 && [0, 90, 180, 270].includes(args[0])) {
+      await course.set_display_rotation(args[0], { signal });
+    } else if (message.method === 'set_live_sensor_data' && args.length === 1 && [1, 2, 4, 8, 16, 32, 64, 128].includes(args[0])) {
+      await course.set_live_sensor_data(args[0], { signal });
+    } else if (message.method === 'set_display_image' && args.length === 1 && (typeof args[0] === 'string' || (Number.isInteger(args[0]) && numeric(args[0], 0, 65535)))) {
+      await course.set_display_image(args[0], { signal });
+    } else if (message.method === 'set_display_animation' && args.length === 2 && (typeof args[0] === 'string' || (Number.isInteger(args[0]) && numeric(args[0], 0, 65535))) && typeof args[1] === 'boolean') {
+      await course.set_display_animation(...args, { signal });
+    } else if (['set_front_led', 'set_back_led', 'set_left_led', 'set_right_led'].includes(message.method) && args.length === 1 && rgb(args[0])) {
+      await course.set_led(message.method.split('_')[1], channels(args[0]), { signal });
+    } else if (message.method === 'get_ambient_light' && (args.length === 0 || (args.length === 1 && numeric(args[0], Number.MIN_VALUE, 60)))) {
+      result = await course.get_ambient_light({ signal, ...(args.length ? { timeoutMs: args[0] * 1000 } : {}) });
+    } else if (message.method === 'get_sensor_data' && args.length === 2 &&
+      ['accelerometer', 'gyroscope', 'orientation', 'locator', 'velocity'].includes(args[0]) && numeric(args[1], Number.MIN_VALUE, 60)) {
+      result = await course.get_sensor_data(args[0], { signal, timeoutMs: args[1] * 1000 });
+    } else if (message.method === 'get_battery_percentage' && args.length === 0) {
+      result = await course.get_battery_percentage({ signal });
     } else throw new Error('Unsupported BOLT+ command or invalid arguments.');
   } catch (failure) { error = String(failure.message || failure); }
-  if (isCurrent()) activeWorker.postMessage({ type: 'robot-result', id: message.id, result: null, error });
+  if (isCurrent()) activeWorker.postMessage({ type: 'robot-result', id: message.id, result, error });
 }
 
 const bolt = new window.BoltConnection((state, name) => {
@@ -264,10 +328,12 @@ const bolt = new window.BoltConnection((state, name) => {
   $("robotStatus").textContent = state === 'connected' ? (name || 'BOLT+') + ' connected' : state === 'connecting' ? 'Connecting BOLT+…' : 'BOLT+ disconnected';
   boltBtn.textContent = state === 'connected' ? 'Disconnect BOLT+' : 'Connect BOLT+';
   boltBtn.disabled = state === 'connecting';
+  stopBtn.disabled = stopping || (!running && state !== 'connected');
   aim?.onConnectionState(state);
   if (state === 'disconnected' && running) void stopProgram('BOLT+ disconnected. Program stopped.');
 }, message => write('>>> BOLT+ ' + message + '\n', 'sys'));
 aim = new window.BoltAim(bolt, { onMessage: (message, cls) => write(message + '\n', cls) });
+course = new window.BoltCourseApi(bolt);
 
 boltBtn.onclick = async () => {
   boltBtn.disabled = true;
@@ -293,6 +359,47 @@ function loadStarter(ask = true) {
   persist();
   if (cm) cm.focus(); else $("code").focus();
 }
+
+const BOLT_LIGHT_DISPLAY = `# BOLT+ light, colour, and messages (no driving)
+# Connect and confirm Aim, then Run. Cover/uncover the light sensor.
+from sphero import set_main_led, set_display_color, set_display_text
+from sphero import get_ambient_light, delay
+
+async def start_program():
+    green = {'r': 0, 'g': 255, 'b': 0}
+    white = {'r': 255, 'g': 255, 'b': 255}
+    black = {'r': 0, 'g': 0, 'b': 0}
+    await set_main_led(green)
+    await set_display_color(green)
+    await delay(2)
+    await set_display_text("Hello\\nBOLT+!", white, black)
+    await delay(2)
+    for sample in range(10):
+        light = await get_ambient_light()
+        print(f"Light: {light:.1f} lux")
+        await set_display_text(f"Light\\n{light:.1f}\\nlux", white, black)
+        await delay(1)
+`;
+
+$("lightDisplay").onclick = () => {
+  if (running || stopping) return;
+  if (getCode().trim() && ![STARTER, BOLT_LIGHT_DISPLAY].includes(getCode()) && !confirm('Replace the current code with the light and display example? Save your .py file first if you want to keep it.')) return;
+  setCode(BOLT_LIGHT_DISPLAY);
+  $("file").value = 'bolt_light_display.py';
+  persist();
+};
+
+new window.BoltDisplayBrowser({
+  isBusy: () => running || stopping,
+  onUseExample(code, filename) {
+    if (running || stopping) return false;
+    if (getCode().trim() && getCode() !== STARTER && !confirm('Replace the current code with this display example? Save your .py file first if you want to keep it.')) return false;
+    setCode(code);
+    $("file").value = filename;
+    persist();
+    return true;
+  }
+});
 
 // ---------- File buttons ----------
 function saveFile() {
@@ -322,6 +429,7 @@ $("reset").onclick = () => {
 };
 window.addEventListener('pagehide', () => {
   runAbort?.abort();
+  void course?.cancelAll('The page was closed.');
   worker?.terminate();
   // Start stopping before tearing down the SDK's BLE bridge.
   void bolt.disconnect();

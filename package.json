@@ -4,12 +4,13 @@
   "private": true,
   "description": "A browser Python IDE with Sphero BOLT+ aiming, connection recovery, and Moodle packaging.",
   "scripts": {
-    "test": "node --test tests/python-worker.test.mjs tests/sdk-cleanup.test.mjs tests/bolt-session.test.mjs",
+    "test": "node --test tests/python-worker.test.mjs tests/sdk-cleanup.test.mjs tests/bolt-session.test.mjs tests/bolt-course-api.test.mjs tests/bolt-sdk-contract.test.mjs tests/display-library.test.mjs tests/package-output.test.mjs",
     "test:neo": "node tests/neo-reconnect-regression.cjs vendor/sphero/sphero-sdk.js fixed",
     "test:browser": "node tests/browser.test.mjs",
     "package": "python3 scripts/package.py",
     "package:moodle": "python3 scripts/package-moodle.py",
-    "check:moodle": "node scripts/check-moodle-package.mjs"
+    "check:moodle": "node scripts/check-moodle-package.mjs",
+    "extract:display-library": "node scripts/extract-display-library.mjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"
